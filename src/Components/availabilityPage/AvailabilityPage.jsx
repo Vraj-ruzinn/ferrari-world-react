@@ -145,10 +145,10 @@ const AvailabilityPage = () => {
 
                 {/* Feature 4 */}
                 <div className="flex items-start gap-3 p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
-                  <div className="bg-blue-100 p-2 rounded-lg flex items-center justify-center">
+                  <div className="bg-sky-100 p-2 rounded-lg flex items-center justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6 text-blue-600"
+                      className="w-6 h-6 text-sky-500"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -156,7 +156,7 @@ const AvailabilityPage = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-blue-700 text-lg">
+                    <h3 className="font-semibold text-sky-500 text-lg">
                       Best Price Guarantee
                     </h3>
                     <p className="text-gray-600 text-sm">
@@ -183,12 +183,12 @@ const AvailabilityPage = () => {
             {/* Swipper */}
             <div className="max-w-screen-xl mx-auto px-5 mt-8">
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-semibold text-pink-600">
+                <h2 className="text-xl font-semibold text-sky-400">
                   ⭐ 4.5/5 (24,872)
                 </h2>
                 <a
                   href="#"
-                  className="text-sm font-medium text-pink-600 hover:underline"
+                  className="text-sm font-medium text-sky-400 hover:underline"
                 >
                   Show all 24.8K reviews
                 </a>
@@ -210,7 +210,7 @@ const AvailabilityPage = () => {
                   768: { slidesPerView: 2 }, 
                   1024: { slidesPerView: 2 }, 
                 }}
-                className=""
+                className="shadow-md"
               >
                 {/* Slide 1 */}
                 <SwiperSlide>
@@ -230,7 +230,7 @@ const AvailabilityPage = () => {
                         </p>
                       </div>
                     </div>
-                    <p className="text-pink-600 font-semibold">
+                    <p className="text-sky-400 font-semibold">
                       ⭐⭐⭐⭐⭐ 5/5
                     </p>
                     <p className="text-gray-700 text-sm mt-2">
@@ -240,7 +240,7 @@ const AvailabilityPage = () => {
                     </p>
                     <a
                       href="#"
-                      className="text-sm font-medium text-pink-600 hover:underline"
+                      className="text-sm font-medium text-sky-400 hover:underline"
                     >
                       Read more
                     </a>
@@ -265,7 +265,7 @@ const AvailabilityPage = () => {
                         </p>
                       </div>
                     </div>
-                    <p className="text-pink-600 font-semibold">⭐⭐⭐⭐ 4/5</p>
+                    <p className="text-sky-400 font-semibold">⭐⭐⭐⭐ 4/5</p>
                     <p className="text-gray-700 text-sm mt-2">
                       That was very exciting however not perfect day in
                       Disneyland Park. Two attractions broke and we lost two
@@ -273,7 +273,7 @@ const AvailabilityPage = () => {
                     </p>
                     <a
                       href="#"
-                      className="text-sm font-medium text-pink-600 hover:underline"
+                      className="text-sm font-medium text-sky-400 hover:underline"
                     >
                       Read more
                     </a>
@@ -298,7 +298,7 @@ const AvailabilityPage = () => {
                         </p>
                       </div>
                     </div>
-                    <p className="text-pink-600 font-semibold">⭐⭐⭐⭐ 4/5</p>
+                    <p className="text-sky-400 font-semibold">⭐⭐⭐⭐ 4/5</p>
                     <p className="text-gray-700 text-sm mt-2">
                       That was very exciting however not perfect day in
                       Disneyland Park. Two attractions broke and we lost two
@@ -306,7 +306,7 @@ const AvailabilityPage = () => {
                     </p>
                     <a
                       href="#"
-                      className="text-sm font-medium text-pink-600 hover:underline"
+                      className="text-sm font-medium text-sky-400 hover:underline"
                     >
                       Read more
                     </a>
@@ -331,7 +331,7 @@ const AvailabilityPage = () => {
                         </p>
                       </div>
                     </div>
-                    <p className="text-pink-600 font-semibold">⭐⭐⭐⭐ 4/5</p>
+                    <p className="text-sky-400 font-semibold">⭐⭐⭐⭐ 4/5</p>
                     <p className="text-gray-700 text-sm mt-2">
                       That was very exciting however not perfect day in
                       Disneyland Park. Two attractions broke and we lost two
@@ -339,7 +339,7 @@ const AvailabilityPage = () => {
                     </p>
                     <a
                       href="#"
-                      className="text-sm font-medium text-pink-600 hover:underline"
+                      className="text-sm font-medium text-sky-400 hover:underline"
                     >
                       Read more
                     </a>
@@ -364,7 +364,7 @@ const AvailabilityPage = () => {
                         </p>
                       </div>
                     </div>
-                    <p className="text-pink-600 font-semibold">⭐⭐⭐⭐ 4/5</p>
+                    <p className="text-sky-400 font-semibold">⭐⭐⭐⭐ 4/5</p>
                     <p className="text-gray-700 text-sm mt-2">
                       That was very exciting however not perfect day in
                       Disneyland Park. Two attractions broke and we lost two
@@ -372,7 +372,7 @@ const AvailabilityPage = () => {
                     </p>
                     <a
                       href="#"
-                      className="text-sm font-medium text-pink-600 hover:underline"
+                      className="text-sm font-medium text-sky-400 hover:underline"
                     >
                       Read more
                     </a>
@@ -397,7 +397,7 @@ const AvailabilityPage = () => {
                         </p>
                       </div>
                     </div>
-                    <p className="text-pink-600 font-semibold">⭐⭐⭐⭐ 4/5</p>
+                    <p className="text-sky-400 font-semibold">⭐⭐⭐⭐ 4/5</p>
                     <p className="text-gray-700 text-sm mt-2">
                       That was very exciting however not perfect day in
                       Disneyland Park. Two attractions broke and we lost two
@@ -405,7 +405,7 @@ const AvailabilityPage = () => {
                     </p>
                     <a
                       href="#"
-                      className="text-sm font-medium text-pink-600 hover:underline"
+                      className="text-sm font-medium text-sky-400 hover:underline"
                     >
                       Read more
                     </a>
@@ -430,7 +430,7 @@ const AvailabilityPage = () => {
                         </p>
                       </div>
                     </div>
-                    <p className="text-pink-600 font-semibold">⭐⭐⭐⭐ 4/5</p>
+                    <p className="text-sky-400 font-semibold">⭐⭐⭐⭐ 4/5</p>
                     <p className="text-gray-700 text-sm mt-2">
                       That was very exciting however not perfect day in
                       Disneyland Park. Two attractions broke and we lost two
@@ -438,7 +438,7 @@ const AvailabilityPage = () => {
                     </p>
                     <a
                       href="#"
-                      className="text-sm font-medium text-pink-600 hover:underline"
+                      className="text-sm font-medium text-sky-400 hover:underline"
                     >
                       Read more
                     </a>
@@ -594,7 +594,7 @@ const AvailabilityPage = () => {
                 min={new Date().toISOString().split("T")[0]}
               />
 
-              <button className="w-full bg-orange-400 text-white font-semibold py-2 rounded-lg hover:bg-orange-300">
+              <button className="w-full bg-sky-400 text-white font-semibold py-2 rounded-lg hover:bg-sky-300">
                 Check availability
               </button>
             </div>

@@ -40,7 +40,7 @@ const Backlinesection = () => {
               <React.Fragment key={index}>
                 <a
                   href="https://rathin.com/"
-                  className="text-gray-800 text-xs sm:text-sm md:text-base hover:text-orange-500 transition-colors"
+                  className="text-gray-800 text-xs sm:text-sm md:text-base hover:text-sky-500 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -89,7 +89,7 @@ const Backlinesection = () => {
               <React.Fragment key={index}>
                 <a
                   href="https://rathin.com/"
-                  className="text-gray-800 text-xs sm:text-sm md:text-base hover:text-orange-500 transition-colors"
+                  className="text-gray-800 text-xs sm:text-sm md:text-base hover:text-sky-500 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

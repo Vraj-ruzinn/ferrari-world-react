@@ -8,9 +8,10 @@ const Header = () => {
   return (
     <>
       {/* Header */}
-      <header className="w-full bg-white shadow-md sticky top-0 z-50">
-        <div className="container mx-auto">
-          <div className="flex flex-row items-center justify-between px-5 py-4">
+      <header className="lg:w-full lg:shadow-md lg:bg-white lg:sticky lg:top-0 lg:z-50">
+        {/* Container centers the content */}
+        <div className="container mx-auto px-5">
+          <div className="flex flex-row items-center justify-between py-4">
             {/* Logo */}
             <div className="flex items-center">
               <Link to="/">
@@ -24,10 +25,10 @@ const Header = () => {
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center space-x-6 font-medium text-gray-800">
-              <Link to="/about" className="hover:text-orange-500">
+              <Link to="/about" className="hover:text-sky-400">
                 About Us
               </Link>
-              <Link to="/contact" className="hover:text-orange-500">
+              <Link to="/contact" className="hover:text-sky-400">
                 Contact Us
               </Link>
             </nav>
@@ -46,14 +47,14 @@ const Header = () => {
       {/* Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-opacity-50 z-40"
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
           onClick={() => setIsOpen(false)}
         />
       )}
 
       {/* Right Sidebar Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 lg:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -68,14 +69,14 @@ const Header = () => {
         <nav className="flex flex-col items-start px-6 space-y-4 font-medium text-gray-800">
           <Link
             to="/about"
-            className="hover:text-orange-500"
+            className="hover:text-sky-400"
             onClick={() => setIsOpen(false)}
           >
             About Us
           </Link>
           <Link
             to="/contact"
-            className="hover:text-orange-500"
+            className="hover:text-sky-400"
             onClick={() => setIsOpen(false)}
           >
             Contact Us
@@ -87,3 +88,4 @@ const Header = () => {
 };
 
 export default Header;
+  

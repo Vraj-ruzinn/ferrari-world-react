@@ -95,9 +95,9 @@ const CardSection = () => {
 
   return (
     <section className="container mx-auto">
-      <div id="booking-tickets" className="mt-4 px-4">
+      <div id="booking-tickets" className="mt-4 px-4 font-">
         {/* Page Title */}
-        <div className="mt-15 sm:text-left text-center">
+        <div className="mt-15 sm:text-left text-center ">
           <div className="inline-block">
             <h1 className="text-[20px] font-bold md:text-4xl lg:text-5xl text-gray-900">
               Best Ferrari World Combo Deals
@@ -150,7 +150,7 @@ const CardSection = () => {
                   </h2>
 
                   {/* NEW label */}
-                  <div className="text-orange-500 font-bold text-sm mb-1">
+                  <div className="text-sky-500 font-bold text-sm mb-1">
                     NEW . Tickets
                   </div>
 
@@ -180,9 +180,9 @@ const CardSection = () => {
                   </ul>
 
                   {/* More details */}
-                  <button className="text-sm text-black justify-between font-bold hover:underline mt-2">
+                  <Link to={`/availability/${index}`} className="text-sm text-black justify-between font-bold hover:underline mt-2">
                     More details →
-                  </button>
+                  </Link>
                 </div>
                 <div className="border-t border-gray-300 my-3"></div>
 
@@ -199,7 +199,7 @@ const CardSection = () => {
                     {/* Check Availability Button */}
                     <Link
                       to={`/availability/${index}`}
-                      className="flex items-center gap-2 bg-orange-400 text-white cursor-pointer text-sm px-4 py-2 rounded-lg hover:bg-orange-500 transition-colors duration-300"
+                      className="flex items-center gap-2 bg-sky-400 text-white cursor-pointer text-sm px-4 py-2 rounded-lg hover:bg-sky-300 transition-colors duration-300"
                     >
                       <Calendar size={16} /> 
                       Book Ticket

@@ -32,8 +32,8 @@ const ContactUs = () => {
         {/* Contact Section */}
         <div className=" w-full shadow-2xl rounded-lg overflow-hidden grid md:grid-cols-2">
           {/* Left Info Section */}
-          <div className="bg-orange-300 text-white p-8 space-y-6">
-            <div className="bg-orange-400 rounded-lg p-5 text-left">
+          <div className="bg-sky-300 text-white p-8 space-y-6">
+            <div className="bg-sky-400 rounded-lg p-5 text-left">
               <h3 className="flex items-center font-semibold text-lg">
                 <FaMapMarkerAlt className="mr-2" /> Location:
               </h3>
@@ -43,7 +43,7 @@ const ContactUs = () => {
               </p>
             </div>
 
-            <div className="bg-orange-400 rounded-lg p-5 text-left">
+            <div className="bg-sky-400 rounded-lg p-5 text-left">
               <h3 className="flex items-center font-semibold text-lg">
                 <FaMapMarkerAlt className="mr-2" /> Branch:
               </h3>
@@ -53,14 +53,14 @@ const ContactUs = () => {
               </p>
             </div>
 
-            <div className="bg-orange-400 rounded-lg p-5 text-left">
+            <div className="bg-sky-400 rounded-lg p-5 text-left">
               <h3 className="flex items-center font-semibold text-lg">
                 <FaEnvelope className="mr-2" /> Email:
               </h3>
               <p className="mt-2 text-sm">info@rathin.com</p>
             </div>
 
-            <div className="bg-orange-400 rounded-lg p-5 text-left">
+            <div className="bg-sky-400 rounded-lg p-5 text-left">
               <h3 className="flex items-center font-semibold text-lg">
                 <FaPhoneAlt className="mr-2" /> Call:
               </h3>
@@ -69,7 +69,7 @@ const ContactUs = () => {
               </p>
             </div>
 
-            <div className="bg-orange-400 rounded-lg p-5 text-left">
+            <div className="bg-sky-400 rounded-lg p-5 text-left">
               <h3 className="flex items-center font-semibold text-lg">
                 <FaClock className="mr-2" /> Open Hours:
               </h3>
@@ -100,7 +100,7 @@ const ContactUs = () => {
                           errors.name && touched.name
                             ? "border-red-500"
                             : "border-gray-300"
-                        } rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400`}
+                        } rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-400`}
                       />
                       <ErrorMessage
                         name="name"
@@ -117,7 +117,7 @@ const ContactUs = () => {
                           errors.email && touched.email
                             ? "border-red-500"
                             : "border-gray-300"
-                        } rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400`}
+                        } rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-400`}
                       />
                       <ErrorMessage
                         name="email"
@@ -136,7 +136,7 @@ const ContactUs = () => {
                         errors.subject && touched.subject
                           ? "border-red-500"
                           : "border-gray-300"
-                      } rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400`}
+                      } rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-400`}
                     />
                     <ErrorMessage
                       name="subject"
@@ -154,7 +154,7 @@ const ContactUs = () => {
                         errors.message && touched.message
                           ? "border-red-500"
                           : "border-gray-300"
-                      } rounded px-4 py-2 h-32 focus:outline-none focus:ring-2 focus:ring-orange-400`}
+                      } rounded px-4 py-2 h-32 focus:outline-none focus:ring-2 focus:ring-sky-400`}
                     />
                     <ErrorMessage
                       name="message"
@@ -165,7 +165,7 @@ const ContactUs = () => {
 
                   <button
                     type="submit"
-                    className="bg-orange-400 text-white px-6 py-3 rounded font-semibold hover:bg-orange-500 transition"
+                    className="bg-sky-400 text-white px-6 py-3 rounded font-semibold hover:bg-sky-500 transition"
                   >
                     Send Message
                   </button>

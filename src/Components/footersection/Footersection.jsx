@@ -36,7 +36,7 @@ const Footersection = () => {
   };
 
   return (
-    <div className="bg-orange-400 w-full border-t-2 ">
+    <div className="bg-black border-t-2 ">
       <footer className="container mx-auto relative">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 px-4 py-4">
           <div className="flex flex-wrap justify-center sm:justify-end items-center gap-2 order-1 sm:order-3">
@@ -58,7 +58,7 @@ const Footersection = () => {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-white hover:text-red-400 border border-gray-700 rounded-full"
+                className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-white hover:text-sky-500 border border-gray-700 rounded-full"
               >
                 {item.icon}
               </a>
@@ -71,18 +71,18 @@ const Footersection = () => {
           </div>
 
           {/* LEFT SIDE */}
-          <div className="flex flex-wrap justify-center sm:justify-start gap-4 text-white text-xs sm:text-sm order-2 sm:order-1">
+          <div className="flex flex-wrap justify-center sm:justify-start gap-4 text-white text-xs sm:text-sm order-2 sm:order-1 ">
             <Link
               to={`/terms`}
               rel="noopener noreferrer"
-              className="hover:underline"
+              className="hover:underline hover:text-sky-500"
             >
               Terms of Usage
             </Link>
             <Link
               to={`/policy`}
               rel="noopener noreferrer"
-              className="hover:underline"
+              className="hover:underline hover:text-sky-500"
             >
               Privacy Policy
             </Link>
@@ -95,8 +95,8 @@ const Footersection = () => {
             <button
               onClick={scrollToTop}
               className=" 
-               bg-orange-400 w-9 h-9  flex items-center justify-center 
-               rounded-full text-white hover:bg-orange-500 shadow-lg"
+               bg-sky-400 w-9 h-9  flex items-center justify-center 
+               rounded-full text-white hover:bg-sky-500 shadow-lg"
               aria-label="Back to Top"
               type="button"
             >
