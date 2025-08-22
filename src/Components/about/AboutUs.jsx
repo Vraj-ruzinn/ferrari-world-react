@@ -5,9 +5,9 @@ import Footersection from "../footersection/Footersection";
 const AboutUs = () => {
   return (
     <div className="bg-gray-50">
-      <Header />
     <div className="container mx-auto">
       {/* Header */}
+      <Header />
 
       {/* Company Overview */}
       <section className=" px-4 mt-8">
@@ -95,8 +95,8 @@ const AboutUs = () => {
       </section> */}
 
       {/* Footer CTA */}
-    </div>
       <Footersection />
+    </div>
     </div>
   );
 };
