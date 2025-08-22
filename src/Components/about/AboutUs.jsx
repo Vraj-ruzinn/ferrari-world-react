@@ -9,7 +9,7 @@ const AboutUs = () => {
       {/* Header */}
       <Header />
 
-      {/* Company Overview */}
+      {/* Company Overview section */}
       <section className=" px-4 mt-8">
         <h2 className="text-3xl mb-4 text-black">Who We Are</h2>
         <p className="text-gray-700 text-lg leading-relaxed">
