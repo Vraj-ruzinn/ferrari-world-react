@@ -13,6 +13,7 @@ import AboutUs from "./Components/about/AboutUs";
 import ContactUs from "./Components/contactus/ContactUs";
 import TermsConditions from "./Components/terms/TermsConditions";
 import Policy from "./Components/policy/Policy";
+import ProductPagae from "./Components/productPagae/ProductPagae";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/terms" element={<TermsConditions />} />
         <Route path="/policy" element={<Policy />} />
+        <Route path="/product-pagae" element={<ProductPagae />} />
       </Routes>
     </Router>
   );

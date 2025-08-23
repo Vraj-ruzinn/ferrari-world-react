@@ -114,7 +114,7 @@ const CardSection = () => {
               href={deal.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="block group bg-white rounded-lg shadow-lg overflow-hidden flex flex-col lg:flex-row hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+              className="group bg-white rounded-lg shadow-lg overflow-hidden flex flex-col lg:flex-row hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
             >
               {/* Swiper Image Section */}
               <div className="w-full lg:w-1/2 overflow-hidden">
@@ -180,7 +180,7 @@ const CardSection = () => {
                   </ul>
 
                   {/* More details */}
-                  <Link to={`/availability/${index}`} className="text-sm text-black justify-between font-bold hover:underline mt-2">
+                  <Link to={`/product-pagae`} className="text-sm text-black justify-between font-bold hover:underline mt-2">
                     More details →
                   </Link>
                 </div>
@@ -198,14 +198,14 @@ const CardSection = () => {
                   <div className="flex gap-2 flex-wrap ">
                     {/* Check Availability Button */}
                     <Link
-                      to={`/availability/${index}`}
+                      to={`/product-pagae`}
                       className="flex items-center gap-2 bg-sky-400 text-white cursor-pointer text-sm px-4 py-2 rounded-lg hover:bg-sky-300 transition-colors duration-300"
                     >
                       <Calendar size={16} /> 
                       Book Ticket
                     </Link>
 
-                    {/* WhatsApp Button */}
+                     {/* WhatsApp Button */}
                     <a
                       href="https://api.whatsapp.com/send?phone=97142087433"
                       target="_blank"
