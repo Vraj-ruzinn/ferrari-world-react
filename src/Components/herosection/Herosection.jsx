@@ -26,7 +26,7 @@ const Herosection = () => {
      <Header/>
 
       {/* Hero Section with Swiper for images */}
-      <section className="container mx-auto relative w-full hidden overflow-hidden md:block">
+      <section className=" mx-auto relative w-full hidden overflow-hidden md:block">
         {/* Swiper */}
         <Swiper
           slidesPerView={1}

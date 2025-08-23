@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react"; 
+import { NavLink } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,28 +9,41 @@ const Header = () => {
     <>
       {/* Header */}
       <header className="lg:w-full lg:shadow-md lg:bg-white lg:sticky lg:top-0 lg:z-50">
-        {/* Container centers the content */}
         <div className="container mx-auto px-5">
           <div className="flex flex-row items-center justify-between py-4">
             {/* Logo */}
             <div className="flex items-center">
-              <Link to="/">
+              <NavLink to="/">
                 <img
                   src="https://rathincom.b-cdn.net//app-assets/media/logos/rathin-tourism-llc---------------------.jpg"
                   alt="Rathin Tourism"
                   className="h-9 md:h-9 object-contain cursor-pointer"
                 />
-              </Link>
+              </NavLink>
             </div>
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center space-x-6 font-medium text-gray-800">
-              <Link to="/about" className="hover:text-sky-400">
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  `relative hover:text-sky-400 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-sky-400 after:transition-all after:duration-300 hover:after:w-full ${
+                    isActive ? "text-sky-500" : ""
+                  }`
+                }
+              >
                 About Us
-              </Link>
-              <Link to="/contact" className="hover:text-sky-400">
+              </NavLink>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  `relative hover:text-sky-400 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-sky-400 after:transition-all after:duration-300 hover:after:w-full ${
+                    isActive ? "text-sky-500" : ""
+                  }`
+                }
+              >
                 Contact Us
-              </Link>
+              </NavLink>
             </nav>
 
             {/* Mobile Hamburger */}
@@ -58,29 +71,32 @@ const Header = () => {
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Close Button */}
         <div className="flex justify-end p-4">
           <button onClick={() => setIsOpen(false)}>
             <X size={28} className="text-gray-800" />
           </button>
         </div>
 
-        {/* Mobile Nav Links */}
+        {/* Mobile Nav */}
         <nav className="flex flex-col items-start px-6 space-y-4 font-medium text-gray-800">
-          <Link
+          <NavLink
             to="/about"
-            className="hover:text-sky-400"
+            className={({ isActive }) =>
+              `hover:text-sky-400 ${isActive ? "text-sky-500" : ""}`
+            }
             onClick={() => setIsOpen(false)}
           >
             About Us
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/contact"
-            className="hover:text-sky-400"
+            className={({ isActive }) =>
+              `hover:text-sky-400 ${isActive ? "text-sky-500" : ""}`
+            }
             onClick={() => setIsOpen(false)}
           >
             Contact Us
-          </Link>
+          </NavLink>
         </nav>
       </div>
     </>
@@ -88,4 +104,3 @@ const Header = () => {
 };
 
 export default Header;
-  

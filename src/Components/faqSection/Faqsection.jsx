@@ -73,7 +73,7 @@ const FaqSection = () => {
         {/* Title */}
         <div className="mb-6 sm:mb-8 text-center sm:text-left">
           <div className="inline-block">
-            <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-black">
+            <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold text-black">
               FAQ&apos;s
             </h2>
             <div className="h-1 bg-orange-400 mt-2 w-full"></div>

@@ -99,7 +99,7 @@ const CardSection = () => {
         {/* Page Title */}
         <div className="mt-15 sm:text-left text-center ">
           <div className="inline-block">
-            <h1 className="text-[20px] font-bold md:text-4xl lg:text-5xl text-gray-900">
+            <h1 className="text-[20px] font-bold md:text-2xl lg:text-3xl text-gray-900">
               Best Ferrari World Combo Deals
             </h1>
             <div className="h-1 bg-orange-400 mt-2 w-full"></div>

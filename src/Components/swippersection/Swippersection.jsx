@@ -10,7 +10,7 @@ export default function Swippersection() {
       {/* Section Title */}
       <div className="mb-8 mt-15 text-center sm:text-left">
         <div className="inline-block">
-          <h2 className="text-lg sm:text-2xl md:text-4xl lg:text-5xl text-black font-bold">
+          <h2 className="text-lg sm:text-2xl md:text-2xl lg:text-3xl text-black font-bold">
             Reviews and Ratings
           </h2>
           <div className="h-1 bg-orange-400 mt-2 w-full"></div>

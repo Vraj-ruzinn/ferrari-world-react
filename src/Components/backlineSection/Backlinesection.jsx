@@ -8,7 +8,7 @@ const Backlinesection = () => {
         {/* Section Title */}
         <div className="mb-6 text-center sm:text-left">
           <div className="inline-block">
-            <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+            <h2 className="text-lg sm:text-2xl md:text-2xl lg:text-3xl font-bold">
               Explore More On Rathin Tours
             </h2>
             <div className="h-1 bg-orange-400 mt-2 w-full"></div>

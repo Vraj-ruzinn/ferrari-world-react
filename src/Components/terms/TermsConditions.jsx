@@ -9,7 +9,7 @@ const TermsConditions = () => {
       <Header />
 
       {/* Page Content */}
-      <main className=" container flex-1 py-10  text-left ">
+      <main className=" container mx-auto flex-1 py-10  text-left ">
         <div className=" text-black p-4">
           <h1 className="text-3xl font-bold mb-6 text-center">
             Terms & Conditions
