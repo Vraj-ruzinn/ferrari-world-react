@@ -4,8 +4,8 @@ const Ratingsection = () => {
   return (
     <div className="bg-black">
       <section className="container mx-auto py-6">
-        <div className="">
-          <div className="  grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-6 px-4">
+        <div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 px-4">
             {[
               {
                 img: "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/icons/trip-advisor01.png",
@@ -30,17 +30,22 @@ const Ratingsection = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center text-center text-gray-300"
+                className="flex flex-col items-center text-gray-300 text-center"
               >
-                <img
-                  src={item.img}
-                  alt={item.label}
-                  className="h-8 mb-1 sm:h-10 md:h-8 lg:h-10"
-                />
-                <span className="text-sm sm:text-base md:text-lg font-medium">
-                  {item.label}
-                </span>
-                <div className="font-bold text-lg sm:text-xl md:text-2xl mt-1">
+                {/* Top part (icon + label) */}
+                <div className="flex flex-col md:flex-row items-center gap-2">
+                  <img
+                    src={item.img}
+                    alt={item.label}
+                    className="h-8 sm:h-10 md:h-8 lg:h-8"
+                  />
+                  <span className="text-sm sm:text-base md:text-lg lg:text-lg font-medium">
+                    {item.label}
+                  </span>
+                </div>
+
+                {/* Rating below */}
+                <div className="font-bold text-lg sm:text-xl md:text-[26px] lg:text-[26px] mt-1">
                   {item.rating}
                 </div>
               </div>

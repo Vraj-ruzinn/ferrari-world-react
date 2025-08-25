@@ -20,6 +20,7 @@ const CardSection = () => {
         "Park admission ticket for Ferrari World Abu Dhabi",
         "Access to rides and shows as per ticket type",
         "E-ticket delivered via email for easy entry",
+        "Digital delivery of all tickets",
       ],
     },
     {
@@ -33,6 +34,7 @@ const CardSection = () => {
         "Park admission ticket for Ferrari World Abu Dhabi",
         "Complimentary transfer service",
         "E-tickets and transfer vouchers delivered digitally",
+        "Digital delivery of all tickets",
       ],
     },
     {
@@ -125,9 +127,9 @@ const CardSection = () => {
                   }}
                   loop={true}
                   pagination={{ clickable: true }}
-                  navigation={false}
+                  navigation={true}
                   modules={[Navigation, Pagination, Autoplay]}
-                  className="h-full"
+                  className="h-full mySwiper"
                 >
                   {deal.images.map((img, imgIndex) => (
                     <SwiperSlide key={imgIndex}>
@@ -148,11 +150,6 @@ const CardSection = () => {
                   <h2 className="font-bold text-xl text-gray-900 mb-2">
                     {deal.title}
                   </h2>
-
-                  {/* NEW label */}
-                  <div className="text-sky-500 font-bold text-sm mb-1">
-                    NEW . Tickets
-                  </div>
 
                   {/* Features Row */}
                   <div className="flex items-center gap-4 text-sm text-gray-600 mb-3 flex-wrap">
@@ -180,7 +177,10 @@ const CardSection = () => {
                   </ul>
 
                   {/* More details */}
-                  <Link to={`/product-pagae`} className="text-sm text-black justify-between font-bold hover:underline mt-2">
+                  <Link
+                    to={`/product-pagae`}
+                    className="text-sm text-black justify-between font-bold hover:underline mt-2"
+                  >
                     More details →
                   </Link>
                 </div>
@@ -188,31 +188,36 @@ const CardSection = () => {
 
                 {/* Price + Availability */}
                 <div className="flex justify-between items-center gap-3 flex-wrap">
+                  {/* Price + Discount */}
                   <div>
                     <div className="text-sm text-gray-500">from</div>
-                    <div className="text-lg font-bold text-gray-900">
-                      ₹3,785
+                    <div className="flex items-center gap-2">
+                      <div className="text-lg font-bold text-gray-900">
+                        ₹3,785
+                      </div>
+                      <span className="bg-sky-500 text-white text-xs font-bold px-2 py-1 rounded-lg">
+                        20% OFF
+                      </span>
                     </div>
                   </div>
 
-                  <div className="flex gap-2 flex-wrap ">
-                    {/* Check Availability Button */}
+                  {/* Action Buttons */}
+                  <div className="flex gap-2 flex-wrap">
                     <Link
                       to={`/product-pagae`}
-                      className="flex items-center gap-2 bg-sky-400 text-white cursor-pointer text-sm px-4 py-2 rounded-lg hover:bg-sky-300 transition-colors duration-300"
+                      className="flex items-center gap-2 bg-sky-400 text-white font-bold cursor-pointer text-sm px-4 py-2 rounded-lg hover:bg-sky-300 transition-colors duration-300"
                     >
-                      <Calendar size={16} /> 
+                      <Calendar size={16} />
                       Book Ticket
                     </Link>
 
-                     {/* WhatsApp Button */}
                     <a
                       href="https://api.whatsapp.com/send?phone=97142087433"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 bg-green-500 text-white text-sm px-4 py-2 rounded-lg hover:bg-green-600 transition-colors duration-300"
+                      className="flex items-center gap-2 bg-green-500 text-white font-bold text-sm px-4 py-2 rounded-lg hover:bg-green-600 transition-colors duration-300"
                     >
-                      <MessageCircle size={16} /> 
+                      <MessageCircle size={16} />
                       WhatsApp Now
                     </a>
                   </div>

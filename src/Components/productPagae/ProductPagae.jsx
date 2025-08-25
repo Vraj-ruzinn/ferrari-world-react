@@ -224,9 +224,9 @@ const ProductPage = () => {
                   }}
                   loop={true}
                   pagination={{ clickable: true }}
-                  navigation={false}
+                  navigation={true}
                   modules={[Navigation, Pagination, Autoplay]}
-                  className="h-full"
+                  className="h-full mySwiper"
                 >
                   {deal.images.map((img, imgIndex) => (
                     <SwiperSlide key={imgIndex}>
@@ -247,11 +247,6 @@ const ProductPage = () => {
                   <h2 className="font-bold text-xl text-gray-900 mb-2">
                     {deal.title}
                   </h2>
-
-                  {/* NEW label */}
-                  <div className="text-sky-500 font-bold text-sm mb-1">
-                    NEW . Tickets
-                  </div>
 
                   {/* Features Row */}
                   <div className="flex items-center gap-4 text-sm text-gray-600 mb-3 flex-wrap">
@@ -290,21 +285,27 @@ const ProductPage = () => {
 
                 {/* Price + Availability */}
                 <div className="flex justify-between items-center gap-3 flex-wrap">
+                  {/* Price + Discount */}
                   <div>
                     <div className="text-sm text-gray-500">from</div>
-                    <div className="text-lg font-bold text-gray-900">
-                      ₹3,785
+                    <div className="flex items-center gap-2">
+                      <div className="text-lg font-bold text-gray-900">
+                        ₹3,785
+                      </div>
+                      <span className="bg-sky-500 text-white text-xs font-bold px-2 py-1 rounded-lg">
+                        20% OFF
+                      </span>
                     </div>
                   </div>
 
-                  <div className="flex gap-2 flex-wrap ">
-                    {/* Check Availability Button */}
+                  {/* Action Buttons */}
+                  <div className="flex gap-2 flex-wrap">
                     <Link
                       to={`/availability/${index}`}
-                      className="flex items-center gap-2 bg-sky-400 text-white cursor-pointer text-sm px-4 py-2 rounded-lg hover:bg-sky-300 transition-colors duration-300"
+                      className="flex items-center gap-2 bg-sky-400 text-white font-bold cursor-pointer text-sm px-4 py-2 rounded-lg hover:bg-sky-300 transition-colors duration-300"
                     >
                       <Calendar size={16} />
-                      Chake Aviblity
+                      Check availability
                     </Link>
                   </div>
                 </div>
@@ -444,59 +445,58 @@ const ProductPage = () => {
 
             <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
               {/* Card 1 */}
-                <div className="flex flex-col items-center bg-gray-50 p-6 rounded-lg shadow-sm">
-                  <FaTicketAlt className="text-orange-500 text-6xl mb-4" />
-                  <h3 className="text-base sm:text-lg text-black font-bold mb-2">
-                    Official Ticket Seller
-                  </h3>
-                  <p className="text-gray-600 text-sm sm:text-[16px] leading-relaxed">
-                    Book with confidence! Rathin Tours is an authorized seller,
-                    offering genuine tickets at unbeatable prices.
-                  </p>
-                </div>
+              <div className="flex flex-col items-center bg-gray-50 p-6 rounded-lg shadow-sm">
+                <FaTicketAlt className="text-orange-500 text-6xl mb-4" />
+                <h3 className="text-base sm:text-lg text-black font-bold mb-2">
+                  Official Ticket Seller
+                </h3>
+                <p className="text-gray-600 text-sm sm:text-[16px] leading-relaxed">
+                  Book with confidence! Rathin Tours is an authorized seller,
+                  offering genuine tickets at unbeatable prices.
+                </p>
+              </div>
 
               {/* Card 2 */}
-                <div className="flex flex-col items-center bg-gray-50 p-6 rounded-lg shadow-sm">
-                  <FaGlobe className="text-sky-500 text-6xl mb-4" />
-                  <h3 className="text-base sm:text-lg text-black font-bold mb-2">
-                    Expert Guides
-                  </h3>
-                  <p className="text-gray-600 text-sm sm:text-[16px] leading-relaxed">
-                    Enhance your experience with our knowledgeable guides who
-                    ensure you get the most out of every visit with insider tips
-                    and smooth coordination.
-                  </p>
-                </div>
+              <div className="flex flex-col items-center bg-gray-50 p-6 rounded-lg shadow-sm">
+                <FaGlobe className="text-sky-500 text-6xl mb-4" />
+                <h3 className="text-base sm:text-lg text-black font-bold mb-2">
+                  Expert Guides
+                </h3>
+                <p className="text-gray-600 text-sm sm:text-[16px] leading-relaxed">
+                  Enhance your experience with our knowledgeable guides who
+                  ensure you get the most out of every visit with insider tips
+                  and smooth coordination.
+                </p>
+              </div>
 
               {/* Card 3 */}
-                <div className="flex flex-col items-center bg-gray-50 p-6 rounded-lg shadow-sm">
-                  <FaShieldAlt className="text-green-600 text-6xl mb-4" />
-                  <h3 className="text-base sm:text-lg text-black font-bold mb-2">
-                    Hassle-Free Booking Process
-                  </h3>
-                  <p className="text-gray-600 text-sm sm:text-[16px] leading-relaxed">
-                    No stress, no delays. Our smooth and secure booking system
-                    lets you reserve your favorite attractions in just a few
-                    clicks.
-                  </p>
-                </div>
+              <div className="flex flex-col items-center bg-gray-50 p-6 rounded-lg shadow-sm">
+                <FaShieldAlt className="text-green-600 text-6xl mb-4" />
+                <h3 className="text-base sm:text-lg text-black font-bold mb-2">
+                  Hassle-Free Booking Process
+                </h3>
+                <p className="text-gray-600 text-sm sm:text-[16px] leading-relaxed">
+                  No stress, no delays. Our smooth and secure booking system
+                  lets you reserve your favorite attractions in just a few
+                  clicks.
+                </p>
+              </div>
 
               {/* Card 4 */}
-                <div className="flex flex-col items-center bg-gray-50 p-6 rounded-lg shadow-sm">
-                  <FaHeadset className="text-sky-500 text-6xl mb-4" />
-                  <h3 className="text-base sm:text-lg text-black font-bold mb-2">
-                    24x7 Customer Support
-                  </h3>
-                  <p className="text-gray-600 text-sm sm:text-[16px] leading-relaxed">
-                    We're always here for you. Get round-the-clock assistance
-                    before, during, or after your booking—your perfect trip is
-                    just a message away.
-                  </p>
-                </div>
+              <div className="flex flex-col items-center bg-gray-50 p-6 rounded-lg shadow-sm">
+                <FaHeadset className="text-sky-500 text-6xl mb-4" />
+                <h3 className="text-base sm:text-lg text-black font-bold mb-2">
+                  24x7 Customer Support
+                </h3>
+                <p className="text-gray-600 text-sm sm:text-[16px] leading-relaxed">
+                  We're always here for you. Get round-the-clock assistance
+                  before, during, or after your booking—your perfect trip is
+                  just a message away.
+                </p>
+              </div>
             </div>
           </div>
         </section>
-
       </div>
       <Footersection />
     </div>

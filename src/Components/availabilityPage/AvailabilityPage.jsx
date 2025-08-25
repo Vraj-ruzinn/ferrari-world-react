@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Herosection from "../herosection/Herosection";
 import Footersection from "../footersection/Footersection";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -6,15 +6,16 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import NavBar from "../header/Header";
 import Header from "../header/Header";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const AvailabilityPage = () => {
+  const [selectedDate, setSelectedDate] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -28,6 +29,37 @@ const AvailabilityPage = () => {
           <h1 className="text-black mt-8 font-bold text-2xl text-center sm:text-3xl md:text-3xl lg:text-4xl lg:text-left">
             1-Day Ticket to Disneyland Paris
           </h1>
+
+          {/* Tags Section */}
+          <div
+            className="flex flex-wrap gap-2 mt-4 
+                justify-center sm:justify-center 
+                md:justify-start lg:justify-start xl:justify-start"
+          >
+            {[
+              "Mobile Tickets",
+              "Official Reseller",
+              "Valid For 3 Months",
+              "Summer Offer",
+              "Family Friendly",
+              "Bestseller",
+              "Open Date Ticket",
+            ].map((tag, i) => (
+              <span
+                key={i}
+                className="px-3 py-1 
+                 text-xs sm:text-sm md:text-base 
+                 bg-sky-200 text-gray-800 
+                 font-medium rounded-full 
+                 shadow-sm 
+                 hover:bg-sky-300 
+                 cursor-pointer 
+                 transition"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Content */}
@@ -180,6 +212,139 @@ const AvailabilityPage = () => {
 
             <div className="border-t border-gray-300 my-3"></div>
 
+            {/* FAQ */}
+            <div className="max-w-screen-lg mx-auto px-4">
+              {/* FAQ Section */}
+              <div className="space-y-8">
+                {" "}
+                {/* extra spacing between FAQs */}
+                {[
+                  {
+                    q: "Highlights",
+                    a: (
+                      <ul className="list-disc pl-6 space-y-2 text-base text-gray-600 leading-relaxed">
+                        <li>
+                          Level up your Dubai trip (literally!) with a visit to
+                          the 124 and 125 floors of the Burj Khalifa.
+                        </li>
+                        <li>
+                          The observation deck with floor-to-ceiling windows on
+                          the 124th floor gives you 360° views of the Arabian
+                          Gulf.
+                        </li>
+                        <li>
+                          The 125th floor ups the ante with an open-air terrace.
+                          And don't miss the exquisite Mashrabiya motifs – a
+                          tribute to Arab arts and culture.
+                        </li>
+                        <li>
+                          For a luxurious and personalized experience with
+                          shorter wait times, upgrade to Sky Lounge access on
+                          the 148th floor. You can also include a visit to the
+                          Dubai Aquarium & Underwater Zoo.
+                        </li>
+                        <li>
+                          The 125th floor ups the ante with an open-air terrace.
+                          And don't miss the exquisite Mashrabiya motifs – a
+                          tribute to Arab arts and culture.
+                        </li>
+                      </ul>
+                    ),
+                  },
+                  {
+                    q: "Inclusions",
+                    a: (
+                      <ul className="pl-2 space-y-3 text-base text-gray-600 leading-relaxed">
+                        {[
+                          "Level up your Dubai trip (literally!) with a visit to the 124 and 125 floors of the Burj Khalifa.",
+                          "The observation deck with floor-to-ceiling windows on the 124th floor gives you 360° views of the Arabian Gulf.",
+                          "The 125th floor ups the ante with an open-air terrace. And don't miss the exquisite Mashrabiya motifs – a tribute to Arab arts and culture.",
+                          "For a luxurious and personalized experience with shorter wait times, upgrade to Sky Lounge access on the 148th floor. You can also include a visit to the Dubai Aquarium & Underwater Zoo.",
+                          "The 125th floor ups the ante with an open-air terrace. And don't miss the exquisite Mashrabiya motifs – a tribute to Arab arts and culture.",
+                        ].map((item, index) => (
+                          <li
+                            key={index}
+                            className="flex items-start space-x-2"
+                          >
+                            <span className="text-green-600 mt-1">✔</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ),
+                  },
+
+                  {
+                    q: "Exclusions",
+                    a: (
+                      <ul className="pl-2 space-y-3 text-base text-gray-600 leading-relaxed">
+                        {[
+                          "Transport is not included.",
+                          "Food & beverages are not included.",
+                          "Special events are not included.",
+                        ].map((item, index) => (
+                          <li
+                            key={index}
+                            className="flex items-start space-x-2"
+                          >
+                            <span className="text-red-600 mt-1">✖</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ),
+                  },
+
+                  {
+                    q: "Location",
+                    a: (
+                      <div className="w-full h-[400px] mt-6">
+                        {" "}
+                        {/* added spacing above map */}
+                        <iframe
+                          title="Ferrari World Abu Dhabi Map"
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.699287746792!2d54.60997231501084!3d24.49552698423425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e4547c4a8696d%3A0xc41fcae9d82ba90!2sFerrari%20World%20Abu%20Dhabi!5e0!3m2!1sen!2sin!4v1702748945678!5m2!1sen!2sin"
+                          width="100%"
+                          height="100%"
+                          allowFullScreen=""
+                          loading="lazy"
+                          className="rounded-lg border shadow-md"
+                        ></iframe>
+                      </div>
+                    ),
+                  },
+                ].map((faq, i) => (
+                  <details
+                    key={i}
+                    className="group border-b border-gray-200 pb-6"
+                  >
+                    {/* Question / Heading */}
+                    <summary className="flex items-center justify-between cursor-pointer font-semibold text-gray-900 text-xl">
+                      <span>{faq.q}</span>
+                      <svg
+                        className="w-5 h-5 text-gray-600 transition-transform duration-300 group-open:rotate-180"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </summary>
+
+                    {/* Answer */}
+                    <div className="pt-5 text-lg text-gray-700 leading-relaxed">
+                      {faq.a}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+
             {/* Swipper */}
             <div className="max-w-screen-xl mx-auto px-5 mt-8">
               <div className="flex justify-between items-center mb-4">
@@ -206,9 +371,9 @@ const AvailabilityPage = () => {
                 // navigation
                 // pagination={{ clickable: true }}
                 breakpoints={{
-                  640: { slidesPerView: 1 }, 
-                  768: { slidesPerView: 2 }, 
-                  1024: { slidesPerView: 2 }, 
+                  640: { slidesPerView: 1 },
+                  768: { slidesPerView: 2 },
+                  1024: { slidesPerView: 2 },
                 }}
                 className="shadow-md"
               >
@@ -230,9 +395,7 @@ const AvailabilityPage = () => {
                         </p>
                       </div>
                     </div>
-                    <p className="text-sky-400 font-semibold">
-                      ⭐⭐⭐⭐⭐ 5/5
-                    </p>
+                    <p className="text-sky-400 font-semibold">⭐⭐⭐⭐⭐ 5/5</p>
                     <p className="text-gray-700 text-sm mt-2">
                       I wanted to take the moment to express my appreciation for
                       the exceptional experience my family and I had at
@@ -446,139 +609,6 @@ const AvailabilityPage = () => {
                 </SwiperSlide>
               </Swiper>
             </div>
-
-            {/* FAQ */}
-            <div className="max-w-screen-lg mx-auto px-4">
-              {/* FAQ Section */}
-              <div className="space-y-8">
-                {" "}
-                {/* extra spacing between FAQs */}
-                {[
-                  {
-                    q: "Highlights",
-                    a: (
-                      <ul className="list-disc pl-6 space-y-2 text-base text-gray-600 leading-relaxed">
-                        <li>
-                          Level up your Dubai trip (literally!) with a visit to
-                          the 124 and 125 floors of the Burj Khalifa.
-                        </li>
-                        <li>
-                          The observation deck with floor-to-ceiling windows on
-                          the 124th floor gives you 360° views of the Arabian
-                          Gulf.
-                        </li>
-                        <li>
-                          The 125th floor ups the ante with an open-air terrace.
-                          And don't miss the exquisite Mashrabiya motifs – a
-                          tribute to Arab arts and culture.
-                        </li>
-                        <li>
-                          For a luxurious and personalized experience with
-                          shorter wait times, upgrade to Sky Lounge access on
-                          the 148th floor. You can also include a visit to the
-                          Dubai Aquarium & Underwater Zoo.
-                        </li>
-                        <li>
-                          The 125th floor ups the ante with an open-air terrace.
-                          And don't miss the exquisite Mashrabiya motifs – a
-                          tribute to Arab arts and culture.
-                        </li>
-                      </ul>
-                    ),
-                  },
-                  {
-                    q: "Inclusions",
-                    a: (
-                      <ul className="pl-2 space-y-3 text-base text-gray-600 leading-relaxed">
-                        {[
-                          "Level up your Dubai trip (literally!) with a visit to the 124 and 125 floors of the Burj Khalifa.",
-                          "The observation deck with floor-to-ceiling windows on the 124th floor gives you 360° views of the Arabian Gulf.",
-                          "The 125th floor ups the ante with an open-air terrace. And don't miss the exquisite Mashrabiya motifs – a tribute to Arab arts and culture.",
-                          "For a luxurious and personalized experience with shorter wait times, upgrade to Sky Lounge access on the 148th floor. You can also include a visit to the Dubai Aquarium & Underwater Zoo.",
-                          "The 125th floor ups the ante with an open-air terrace. And don't miss the exquisite Mashrabiya motifs – a tribute to Arab arts and culture.",
-                        ].map((item, index) => (
-                          <li
-                            key={index}
-                            className="flex items-start space-x-2"
-                          >
-                            <span className="text-green-600 mt-1">✔</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    ),
-                  },
-
-                  {
-                    q: "Exclusions",
-                    a: (
-                      <ul className="pl-2 space-y-3 text-base text-gray-600 leading-relaxed">
-                        {[
-                          "Transport is not included.",
-                          "Food & beverages are not included.",
-                          "Special events are not included.",
-                        ].map((item, index) => (
-                          <li
-                            key={index}
-                            className="flex items-start space-x-2"
-                          >
-                            <span className="text-red-600 mt-1">✖</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    ),
-                  },
-
-                  {
-                    q: "Location",
-                    a: (
-                      <div className="w-full h-[400px] mt-6">
-                        {" "}
-                        {/* added spacing above map */}
-                        <iframe
-                          title="Ferrari World Abu Dhabi Map"
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.699287746792!2d54.60997231501084!3d24.49552698423425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e4547c4a8696d%3A0xc41fcae9d82ba90!2sFerrari%20World%20Abu%20Dhabi!5e0!3m2!1sen!2sin!4v1702748945678!5m2!1sen!2sin"
-                          width="100%"
-                          height="100%"
-                          allowFullScreen=""
-                          loading="lazy"
-                          className="rounded-lg border shadow-md"
-                        ></iframe>
-                      </div>
-                    ),
-                  },
-                ].map((faq, i) => (
-                  <details
-                    key={i}
-                    className="group border-b border-gray-200 pb-6"
-                  >
-                    {/* Question / Heading */}
-                    <summary className="flex items-center justify-between cursor-pointer font-semibold text-gray-900 text-xl">
-                      <span>{faq.q}</span>
-                      <svg
-                        className="w-5 h-5 text-gray-600 transition-transform duration-300 group-open:rotate-180"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </summary>
-
-                    {/* Answer */}
-                    <div className="pt-5 text-lg text-gray-700 leading-relaxed">
-                      {faq.a}
-                    </div>
-                  </details>
-                ))}
-              </div>
-            </div>
           </section>
 
           {/* RIGHT SECTION — Price, Date Picker, Why Headout */}
@@ -588,13 +618,17 @@ const AvailabilityPage = () => {
               <p className="text-sm text-gray-500">from</p>
               <p className="text-2xl font-bold mb-4 text-black">₹5,115</p>
 
-              <input
-                type="date"
-                className="w-full border rounded-lg p-2 mb-4 bg-gray-300 text-black"
-                min={new Date().toISOString().split("T")[0]}
+              {/* ✅ Fixed DatePicker */}
+              <DatePicker
+                selected={selectedDate}
+                onChange={(date) => setSelectedDate(date)}
+                minDate={new Date()} // disable past dates
+                dateFormat="dd-MM-yyyy"
+                placeholderText="Select a date"
+                className="w-full border rounded-lg p-2 mb-4 bg-white text-black focus:ring-2 focus:ring-sky-400"
               />
 
-              <button className="w-full bg-sky-400 text-white font-semibold py-2 rounded-lg hover:bg-sky-300">
+              <button className="w-full bg-sky-400 text-white font-bold py-2 rounded-lg hover:bg-sky-300">
                 Check availability
               </button>
             </div>
