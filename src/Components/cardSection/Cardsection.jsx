@@ -21,6 +21,9 @@ const CardSection = () => {
         "Access to rides and shows as per ticket type",
         "E-ticket delivered via email for easy entry",
         "Digital delivery of all tickets",
+         "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+        "E-ticket delivered via email for easy entry",
       ],
     },
     {
@@ -33,6 +36,8 @@ const CardSection = () => {
       features: [
         "Park admission ticket for Ferrari World Abu Dhabi",
         "Complimentary transfer service",
+        "E-tickets and transfer vouchers delivered digitally",
+        "Digital delivery of all tickets",
         "E-tickets and transfer vouchers delivered digitally",
         "Digital delivery of all tickets",
       ],
@@ -49,6 +54,8 @@ const CardSection = () => {
         "Entry ticket for Qasr Al Watan, Abu Dhabi",
         "Tickets valid as per selected dates",
         "Digital delivery of all tickets",
+        "Tickets valid as per selected dates",
+        "Digital delivery of all tickets",
       ],
     },
     {
@@ -61,6 +68,8 @@ const CardSection = () => {
       features: [
         "Park admission ticket for Ferrari World Abu Dhabi",
         "Day pass to Yas Waterworld, Abu Dhabi",
+        "Tickets valid for selected dates",
+        "E-ticket delivery via email",
         "Tickets valid for selected dates",
         "E-ticket delivery via email",
       ],
@@ -77,6 +86,8 @@ const CardSection = () => {
         "Entry ticket for Atlantis The Palm Day Pass, Dubai",
         "Tickets valid on chosen dates",
         "Electronic ticket delivery",
+        "Tickets valid on chosen dates",
+        "Electronic ticket delivery",
       ],
     },
     {
@@ -89,6 +100,8 @@ const CardSection = () => {
       features: [
         "Park admission ticket for Ferrari World Abu Dhabi",
         "Entry ticket for Louvre Abu Dhabi",
+        "Tickets valid as per booking date",
+        "Digital tickets delivered instantly",
         "Tickets valid as per booking date",
         "Digital tickets delivered instantly",
       ],

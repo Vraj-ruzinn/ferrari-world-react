@@ -9,9 +9,76 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import Header from "../header/Header";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Dialog } from "@headlessui/react";
+import {
+  addMonths,
+  startOfMonth,
+  endOfMonth,
+  eachDayOfInterval,
+  format,
+  isBefore,
+  isSameDay,
+  startOfDay,
+  getDay,
+} from "date-fns";
+
+function generateMonthDays(monthDate) {
+  return eachDayOfInterval({
+    start: startOfMonth(monthDate),
+    end: endOfMonth(monthDate),
+  });
+}
+
+function toLocalDateOnly(d) {
+  return new Date(d.getFullYear(), d.getMonth(), d.getDate());
+}
 
 const AvailabilityPage = () => {
   const [selectedDate, setSelectedDate] = useState(null);
+  const [tempSelectedDate, setTempSelectedDate] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentMonthIndex, setCurrentMonthIndex] = useState(0);
+
+  const todayStart = startOfDay(new Date());
+
+  const allMonths = Array.from({ length: 12 }, (_, i) => {
+    const monthDate = addMonths(todayStart, i);
+    return {
+      date: monthDate,
+      days: generateMonthDays(monthDate),
+    };
+  });
+
+  useEffect(() => {
+    if (isOpen) {
+      setTempSelectedDate(selectedDate ? toLocalDateOnly(selectedDate) : null);
+    }
+  }, [isOpen, selectedDate]);
+
+  const applySelection = () => {
+    if (tempSelectedDate) {
+      setSelectedDate(toLocalDateOnly(tempSelectedDate));
+    }
+    setIsOpen(false);
+  };
+
+  const handleSelect = (day) => {
+    if (!isBefore(day, todayStart)) {
+      setTempSelectedDate(toLocalDateOnly(day));
+    }
+  };
+
+  const handleCheckAvailability = () => {
+    if (!selectedDate) {
+      console.log("No date selected");
+      return;
+    }
+
+    console.log("Checking availability for:", selectedDate);
+
+    setSelectedDate(null);
+    setTempSelectedDate(null);
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -49,11 +116,9 @@ const AvailabilityPage = () => {
                 key={i}
                 className="px-3 py-1 
                  text-xs sm:text-sm md:text-base 
-                 bg-sky-200 text-gray-800 
+                 bg-gray-500 text-white 
                  font-medium rounded-full 
-                 shadow-sm 
-                 hover:bg-sky-300 
-                 cursor-pointer 
+                 shadow-sm  
                  transition"
               >
                 {tag}
@@ -216,8 +281,6 @@ const AvailabilityPage = () => {
             <div className="max-w-screen-lg mx-auto px-4">
               {/* FAQ Section */}
               <div className="space-y-8">
-                {" "}
-                {/* extra spacing between FAQs */}
                 {[
                   {
                     q: "Highlights",
@@ -299,8 +362,6 @@ const AvailabilityPage = () => {
                     q: "Location",
                     a: (
                       <div className="w-full h-[400px] mt-6">
-                        {" "}
-                        {/* added spacing above map */}
                         <iframe
                           title="Ferrari World Abu Dhabi Map"
                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.699287746792!2d54.60997231501084!3d24.49552698423425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e4547c4a8696d%3A0xc41fcae9d82ba90!2sFerrari%20World%20Abu%20Dhabi!5e0!3m2!1sen!2sin!4v1702748945678!5m2!1sen!2sin"
@@ -346,17 +407,17 @@ const AvailabilityPage = () => {
             </div>
 
             {/* Swipper */}
-            <div className="max-w-screen-xl mx-auto px-5 mt-8">
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-semibold text-sky-400">
-                  ⭐ 4.5/5 (24,872)
-                </h2>
-                <a
-                  href="#"
-                  className="text-sm font-medium text-sky-400 hover:underline"
-                >
-                  Show all 24.8K reviews
-                </a>
+             <div className="max-w-screen-xl mx-auto px-5 mt-8">
+               <div className="flex justify-between items-center mb-4">
+                 <h2 className="text-xl font-semibold text-sky-400">
+                   ⭐ 4.5/5 (24,872)
+                 </h2>
+                 <a
+                   href="#"
+                   className="text-sm font-medium text-sky-400 hover:underline"
+                 >
+                   Show all 24.8K reviews
+                 </a>
               </div>
 
               <Swiper
@@ -618,17 +679,23 @@ const AvailabilityPage = () => {
               <p className="text-sm text-gray-500">from</p>
               <p className="text-2xl font-bold mb-4 text-black">₹5,115</p>
 
-              {/* ✅ Fixed DatePicker */}
-              <DatePicker
-                selected={selectedDate}
-                onChange={(date) => setSelectedDate(date)}
-                minDate={new Date()} // disable past dates
-                dateFormat="dd-MM-yyyy"
-                placeholderText="Select a date"
-                className="w-full border rounded-lg p-2 mb-4 bg-white text-black focus:ring-2 focus:ring-sky-400"
+              {/* Date Input (opens modal) */}
+              <input
+                type="text"
+                readOnly
+                value={
+                  selectedDate ? format(selectedDate, "EEE, MMM d, yyyy") : ""
+                }
+                onClick={() => setIsOpen(true)}
+                placeholder="Select a date"
+                className="w-full border rounded-lg p-2 mb-4 bg-white text-black focus:ring-2 focus:ring-sky-400 cursor-pointer"
               />
 
-              <button className="w-full bg-sky-400 text-white font-bold py-2 rounded-lg hover:bg-sky-300">
+              {/* wire to handleCheckAvailability (NOT handleSelect) */}
+              <button
+                onClick={handleCheckAvailability}
+                className="w-full bg-sky-400 text-white font-bold py-2 rounded-lg hover:bg-sky-300"
+              >
                 Check availability
               </button>
             </div>
@@ -672,6 +739,164 @@ const AvailabilityPage = () => {
                 </li>
               </ul>
             </div>
+
+            {/* Modal for DatePicker */}
+            <Dialog
+              open={isOpen}
+              onClose={() => setIsOpen(false)}
+              className="relative z-50"
+            >
+              <div
+                className="fixed inset-0 bg-black/40 backdrop-blur-sm"
+                aria-hidden="true"
+              />
+
+              <div className="fixed inset-0 flex items-center justify-center p-4">
+                <Dialog.Panel
+                  className="bg-white rounded-2xl p-4 sm:p-6 shadow-2xl 
+             w-[95%] sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] 
+             max-h-[95vh] overflow-y-auto scrollbar-hidden 
+             transition-all duration-300 relative"
+                >
+                  {/* TOP-RIGHT Close button */}
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    aria-label="Close dialog"
+                    className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-xl font-bold"
+                  >
+                    ✕
+                  </button>
+
+                  <h2 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-gray-800 text-center">
+                    Select Your Date
+                  </h2>
+
+                  {/* Calendar container → 1 column on mobile, 2 columns from md+ */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                    {allMonths
+                      .slice(currentMonthIndex, currentMonthIndex + 2)
+                      .map((month, i) => {
+                        const firstDayOffset = getDay(startOfMonth(month.date));
+
+                        return (
+                          <div key={i} className="w-full">
+                            {/* Month header */}
+                            <div className="flex justify-between items-center mb-4">
+                              {i === 0 && (
+                                <button
+                                  onClick={() =>
+                                    setCurrentMonthIndex((prev) =>
+                                      Math.max(prev - 1, 0)
+                                    )
+                                  }
+                                  disabled={currentMonthIndex === 0}
+                                  className={`px-2 sm:px-3 py-1 rounded-lg text-sm sm:text-base ${
+                                    currentMonthIndex === 0
+                                      ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                                      : "bg-sky-500 text-white hover:bg-sky-600"
+                                  }`}
+                                >
+                                  Prev
+                                </button>
+                              )}
+
+                              <h3 className="text-base sm:text-lg font-semibold text-gray-700 mx-auto">
+                                {format(month.date, "MMMM yyyy")}
+                              </h3>
+
+                              {i === 1 && (
+                                <button
+                                  onClick={() =>
+                                    setCurrentMonthIndex((prev) =>
+                                      Math.min(prev + 1, allMonths.length - 2)
+                                    )
+                                  }
+                                  disabled={
+                                    currentMonthIndex >= allMonths.length - 2
+                                  }
+                                  className={`px-2 sm:px-3 py-1 rounded-lg text-sm sm:text-base ${
+                                    currentMonthIndex >= allMonths.length - 2
+                                      ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                                      : "bg-sky-500 text-white hover:bg-sky-600"
+                                  }`}
+                                >
+                                  Next
+                                </button>
+                              )}
+                            </div>
+
+                            {/* Calendar Grid */}
+                            <div className="grid grid-cols-7 gap-1 sm:gap-2 text-xs sm:text-sm">
+                              {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map(
+                                (d) => (
+                                  <div
+                                    key={d}
+                                    className="text-center text-gray-500 font-medium"
+                                  >
+                                    {d}
+                                  </div>
+                                )
+                              )}
+
+                              {Array.from({ length: firstDayOffset }).map(
+                                (_, idx) => (
+                                  <div
+                                    key={`spacer-${idx}`}
+                                    className="h-8 sm:h-10"
+                                  />
+                                )
+                              )}
+
+                              {month.days.map((day) => (
+                                <button
+                                  key={day.toISOString()}
+                                  onClick={() => handleSelect(day)}
+                                  disabled={isBefore(day, todayStart)}
+                                  className={`h-8 w-8 sm:h-10 sm:w-10 flex items-center justify-center rounded-full text-xs sm:text-sm font-medium transition-all
+                  ${
+                    isBefore(day, todayStart)
+                      ? "text-gray-300 cursor-not-allowed"
+                      : "text-black hover:bg-sky-100 hover:text-sky-600"
+                  }
+                  ${
+                    tempSelectedDate && isSameDay(day, tempSelectedDate)
+                      ? "bg-sky-500 text-white shadow-md"
+                      : ""
+                  }`}
+                                >
+                                  {format(day, "d")}
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      })}
+                  </div>
+
+                  {/* calender Footer */}
+                  <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row justify-end gap-3">
+                    <button
+                      onClick={() => setIsOpen(false)}
+                      className="px-4 py-2 rounded-lg shadow transition-all bg-sky-500 hover:bg-sky-600 text-sm sm:text-base"
+                    >
+                      Cancel
+                    </button>
+
+                    <button
+                      onClick={applySelection}
+                      disabled={!tempSelectedDate}
+                      className={`px-4 py-2 rounded-lg shadow transition-all text-sm sm:text-base ${
+                        !tempSelectedDate
+                          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                          : "bg-sky-500 text-white hover:bg-sky-600"
+                      }`}
+                    >
+                      Apply
+                    </button>
+                  </div>
+                </Dialog.Panel>
+              </div>
+            </Dialog>
           </aside>
         </div>
       </div>
@@ -685,3 +910,4 @@ const AvailabilityPage = () => {
 };
 
 export default AvailabilityPage;
+

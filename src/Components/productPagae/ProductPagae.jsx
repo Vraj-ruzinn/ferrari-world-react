@@ -26,6 +26,8 @@ const ProductPage = () => {
         "Park admission ticket for Ferrari World Abu Dhabi",
         "Access to rides and shows as per ticket type",
         "E-ticket delivered via email for easy entry",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
       ],
     },
     {
@@ -37,6 +39,8 @@ const ProductPage = () => {
       ],
       features: [
         "Park admission ticket for Ferrari World Abu Dhabi",
+        "Complimentary transfer service",
+        "E-tickets and transfer vouchers delivered digitally",
         "Complimentary transfer service",
         "E-tickets and transfer vouchers delivered digitally",
       ],
@@ -53,6 +57,8 @@ const ProductPage = () => {
         "Entry ticket for Qasr Al Watan, Abu Dhabi",
         "Tickets valid as per selected dates",
         "Digital delivery of all tickets",
+        "Tickets valid as per selected dates",
+        "Digital delivery of all tickets",
       ],
     },
     {
@@ -65,6 +71,8 @@ const ProductPage = () => {
       features: [
         "Park admission ticket for Ferrari World Abu Dhabi",
         "Day pass to Yas Waterworld, Abu Dhabi",
+        "Tickets valid for selected dates",
+        "E-ticket delivery via email",
         "Tickets valid for selected dates",
         "E-ticket delivery via email",
       ],
@@ -81,6 +89,8 @@ const ProductPage = () => {
         "Entry ticket for Atlantis The Palm Day Pass, Dubai",
         "Tickets valid on chosen dates",
         "Electronic ticket delivery",
+        "Tickets valid on chosen dates",
+        "Electronic ticket delivery",
       ],
     },
     {
@@ -93,6 +103,8 @@ const ProductPage = () => {
       features: [
         "Park admission ticket for Ferrari World Abu Dhabi",
         "Entry ticket for Louvre Abu Dhabi",
+        "Tickets valid as per booking date",
+        "Digital tickets delivered instantly",
         "Tickets valid as per booking date",
         "Digital tickets delivered instantly",
       ],
