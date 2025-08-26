@@ -386,7 +386,7 @@ const ProductPage = () => {
                   },
                 ].map((item, index) => (
                   <SwiperSlide key={index} className="flex h-full !ml-0">
-                    <div className="bg-white flex flex-col justify-between w-full h-full text-black p-4 sm:p-6 shadow-md border border-gray-300 text-center rounded-lg">
+                    <div className="bg-white flex flex-col justify-between w-full h-full min-h-[250px] text-black p-4 sm:p-6 shadow-md border border-gray-300 text-center rounded-lg">
                       <p className="text-lg leading-7 text-black mb-4">
                         {item.review}
                       </p>
@@ -399,8 +399,8 @@ const ProductPage = () => {
         </div>
 
         {/* horigintel card section */}
-        <div className=" mb-8 shadow-xl p-4">
-          <div className=" mb-8 text-center sm:text-left">
+        <div className="mb-8 shadow-xl p-4">
+          <div className="mb-8 text-center sm:text-left">
             <div className="inline-block">
               <h2 className="text-lg sm:text-2xl md:text-2xl lg:text-3xl text-black font-bold">
                 Similar things to do in Paris
@@ -421,15 +421,15 @@ const ProductPage = () => {
               1024: { slidesPerView: 5, spaceBetween: 28 },
               1536: { slidesPerView: 6, spaceBetween: 36 },
             }}
-            className="mySwiper"
+            className="h-full relative"
           >
             {data.map((item, index) => (
               <SwiperSlide key={index}>
-                <div className="group rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                <div className="group rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 p-2">
                   <img
                     src={item.img}
                     alt={item.title}
-                    className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-60 object-fill transform group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="p-3">
                     <h3 className="text-sm font-semibold text-gray-800">
