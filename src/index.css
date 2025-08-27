@@ -135,6 +135,14 @@ button:focus-visible {
   transform: translateY(-50%) scale(1.08);
 }
 
+.swiper-pagination-bullet {
+  background: #d1d5db !important; 
+  opacity: 1; 
+}
+
+.swiper-pagination-bullet-active {
+  background: #0ea5e9 !important; 
+}
 
 
 

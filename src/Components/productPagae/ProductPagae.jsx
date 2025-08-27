@@ -414,8 +414,13 @@ const ProductPage = () => {
             slidesPerView={2}
             spaceBetween={20}
             navigation={true}
+            autoplay={{ 
+              delay: 3000, 
+              disableOnInteraction: false,
+            }}
+            speed={1000}
             loop={true}
-            modules={[Navigation]}
+            modules={[Navigation, Autoplay, EffectFade]}
             breakpoints={{
               480: { slidesPerView: 2, spaceBetween: 16 },
               768: { slidesPerView: 4, spaceBetween: 24 },

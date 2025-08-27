@@ -966,7 +966,12 @@ const AvailabilityPage = () => {
               </div>
 
               {/* Right side button */}
-              <button className="bg-sky-500 text-white font-bold px-5 py-2 rounded-lg hover:bg-sky-600 transition">
+              <button
+              value={
+                    selectedDate ? format(selectedDate, "EEE, MMM d, yyyy") : ""
+                  }
+              onClick={() => setIsOpen(true)}
+               className="bg-sky-500 text-white font-bold px-5 py-2 rounded-lg hover:bg-sky-600 transition">
                 BOOK NOW
               </button>
             </div>
