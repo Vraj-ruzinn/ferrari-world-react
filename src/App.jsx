@@ -14,6 +14,7 @@ import ContactUs from "./Components/contactus/ContactUs";
 import TermsConditions from "./Components/terms/TermsConditions";
 import Policy from "./Components/policy/Policy";
 import ProductPagae from "./Components/productPagae/ProductPagae";
+import BookingPage from "./Components/booking-page/BookingPage";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/terms" element={<TermsConditions />} />
         <Route path="/policy" element={<Policy />} />
         <Route path="/product-pagae" element={<ProductPagae />} />
+        <Route path="/booking-page" element={<BookingPage />} />
       </Routes>
     </Router>
   );
