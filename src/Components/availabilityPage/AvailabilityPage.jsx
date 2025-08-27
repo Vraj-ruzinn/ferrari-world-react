@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import Header from "../header/Header";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -127,10 +127,10 @@ const AvailabilityPage = () => {
           </div>
         </div>
 
-        {/* Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+        {/* Tablet / Desktop Grid (≥ sm) */}
+        <div className="hidden sm:grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
           {/* Video Section */}
-          <div className="order-1 lg:order-none w-full h-64 sm:h-80 md:h-96 lg:h-auto">
+          <div className="w-full h-64 sm:h-80 md:h-96 lg:h-auto">
             <video
               src="https://static.myconnect.ae/-/media/yasconnect/project/fwad/videos/ranveer2022.mp4"
               autoPlay
@@ -142,28 +142,61 @@ const AvailabilityPage = () => {
           </div>
 
           {/* Images Section */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 order-2 lg:order-none">
-            <img
-              src="https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg"
-              alt="Image 1"
-              className="w-full h-40 sm:h-48 md:h-56 lg:h-full object-cover rounded-xl shadow-md"
-            />
-            <img
-              src="https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Yas-Water-World-Day-Pass.jpg"
-              alt="Image 2"
-              className="w-full h-40 sm:h-48 md:h-56 lg:h-full object-cover rounded-xl shadow-md"
-            />
-            <img
-              src="https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-plus-Park-Atlantis-Day-Pass.jpg"
-              alt="Image 3"
-              className="w-full h-40 sm:h-48 md:h-56 lg:h-full object-cover rounded-xl shadow-md"
-            />
-            <img
-              src="https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Louvre-Abu-Dhabi.jpg"
-              alt="Image 4"
-              className="w-full h-40 sm:h-48 md:h-56 lg:h-full object-cover rounded-xl shadow-md"
-            />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
+              "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Yas-Water-World-Day-Pass.jpg",
+              "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-plus-Park-Atlantis-Day-Pass.jpg",
+              "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Louvre-Abu-Dhabi.jpg",
+            ].map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt={`Image ${i + 1}`}
+                className="w-full h-40 sm:h-48 md:h-56 lg:h-full object-cover rounded-xl shadow-md"
+              />
+            ))}
           </div>
+        </div>
+
+        {/* Mobile Swiper (≤ sm only) */}
+        <div className="block sm:hidden">
+          <Swiper 
+          spaceBetween={12} 
+          slidesPerView={1}
+           modules={[Navigation]}
+          navigation={true}
+          >
+            
+            
+            {/* Video Slide */}
+            <SwiperSlide>
+              <video
+                src="https://static.myconnect.ae/-/media/yasconnect/project/fwad/videos/ranveer2022.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-64 object-cover rounded-xl shadow-md"
+              ></video>
+            </SwiperSlide>
+
+            {/* Image Slides */}
+            {[
+              "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
+              "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Yas-Water-World-Day-Pass.jpg",
+              "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-plus-Park-Atlantis-Day-Pass.jpg",
+              "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Louvre-Abu-Dhabi.jpg",
+            ].map((src, i) => (
+              <SwiperSlide key={i}>
+                <img
+                  src={src}
+                  alt={`Image ${i + 1}`}
+                  className="w-full h-64 object-cover rounded-xl shadow-md"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
 
@@ -407,21 +440,21 @@ const AvailabilityPage = () => {
             </div>
 
             {/* Swipper */}
-             <div className="max-w-screen-xl mx-auto px-5 mt-8">
-               <div className="flex justify-between items-center mb-4">
-                 <h2 className="text-xl font-semibold text-sky-400">
-                   ⭐ 4.5/5 (24,872)
-                 </h2>
-                 <a
-                   href="#"
-                   className="text-sm font-medium text-sky-400 hover:underline"
-                 >
-                   Show all 24.8K reviews
-                 </a>
+            <div className="max-w-screen-xl mx-auto px-5 mt-8">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-xl font-semibold text-sky-400">
+                  ⭐ 4.5/5 (24,872)
+                </h2>
+                <a
+                  href="#"
+                  className="text-sm font-medium text-sky-400 hover:underline"
+                >
+                  Show all 24.8K reviews
+                </a>
               </div>
 
               <Swiper
-                modules={[Navigation, Pagination, Autoplay]}
+                modules={[Navigation, Pagination, Autoplay, EffectFade]}
                 spaceBetween={20}
                 slidesPerView={1}
                 autoplay={{
@@ -429,6 +462,7 @@ const AvailabilityPage = () => {
                   disableOnInteraction: false,
                 }}
                 loop={true}
+                speed={1000}
                 // navigation
                 // pagination={{ clickable: true }}
                 breakpoints={{
@@ -676,25 +710,51 @@ const AvailabilityPage = () => {
           <aside className="space-y-6 lg:sticky lg:top-8 self-start">
             {/* Price & Date Picker */}
             <div className="border rounded-lg p-5 shadow-lg">
+              {/* Price & Discount */}
+              <div className="flex items-center gap-2 mb-2">
+                <p className="text-gray-400 line-through text-sm">AED 365</p>
+                <span className="bg-green-600 text-white text-xs font-bold px-2 py-0.5 rounded">
+                  45% off
+                </span>
+              </div>
               <p className="text-sm text-gray-500">from</p>
-              <p className="text-2xl font-bold mb-4 text-black">₹5,115</p>
+              <p className="text-2xl font-bold mb-4 text-black">AED 199</p>
 
-              {/* Date Input (opens modal) */}
-              <input
-                type="text"
-                readOnly
-                value={
-                  selectedDate ? format(selectedDate, "EEE, MMM d, yyyy") : ""
-                }
-                onClick={() => setIsOpen(true)}
-                placeholder="Select a date"
-                className="w-full border rounded-lg p-2 mb-4 bg-white text-black focus:ring-2 focus:ring-sky-400 cursor-pointer"
-              />
+              {/* Date Input */}
+              <div className="relative mb-4">
+                <input
+                  type="text"
+                  readOnly
+                  value={
+                    selectedDate ? format(selectedDate, "EEE, MMM d, yyyy") : ""
+                  }
+                  onClick={() => setIsOpen(true)}
+                  placeholder="Select a date"
+                  className="w-full border rounded-lg p-3 bg-white text-gray-700 text-sm focus:ring-2 focus:ring-sky-400 cursor-pointer pr-8"
+                />
+                {/* Dropdown Icon */}
+                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </span>
+              </div>
 
-              {/* wire to handleCheckAvailability (NOT handleSelect) */}
+              {/* Check Availability Button */}
               <button
                 onClick={handleCheckAvailability}
-                className="w-full bg-sky-400 text-white font-bold py-2 rounded-lg hover:bg-sky-300"
+                className="w-full bg-sky-500 text-white font-bold py-3 rounded-lg hover:bg-sky-600 transition"
               >
                 Check availability
               </button>
@@ -897,6 +957,19 @@ const AvailabilityPage = () => {
                 </Dialog.Panel>
               </div>
             </Dialog>
+
+            <div className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg p-3 flex justify-between items-center md:hidden z-50">
+              {/* Price text together */}
+              <div className="flex flex-col">
+                <p className="text-gray-700 text-sm">from</p>
+                <span className="font-bold text-black text-lg">AED 199</span>
+              </div>
+
+              {/* Right side button */}
+              <button className="bg-sky-500 text-white font-bold px-5 py-2 rounded-lg hover:bg-sky-600 transition">
+                BOOK NOW
+              </button>
+            </div>
           </aside>
         </div>
       </div>
@@ -910,4 +983,3 @@ const AvailabilityPage = () => {
 };
 
 export default AvailabilityPage;
-

@@ -2,7 +2,8 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css/effect-fade";
+import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import Header from "../header/Header";
 
 const heroImages = [
@@ -30,12 +31,13 @@ const Herosection = () => {
         {/* Swiper */}
         <Swiper
           slidesPerView={1}
-          modules={[Navigation, Autoplay]}
+          modules={[Navigation, Autoplay, EffectFade]}
           navigation={false}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
           }}
+          speed={1200}
           loop={true}
           className="w-full"
         >
@@ -68,12 +70,13 @@ const Herosection = () => {
         {/* Swiper */}
         <Swiper
           slidesPerView={1}
-          modules={[Navigation, Autoplay]}
+          modules={[Navigation, Autoplay, EffectFade]}
           navigation={false}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
           }}
+          speed={1000}
           loop={true}
           className="w-full"
         >

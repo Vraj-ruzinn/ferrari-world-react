@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Calendar, MessageCircle } from "lucide-react";
 import { FaShieldAlt, FaTicketAlt } from "react-icons/fa";
 import { FaGlobe, FaHeadset } from "react-icons/fa6";
@@ -225,7 +225,7 @@ const ProductPage = () => {
               href={deal.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white rounded-lg shadow-lg overflow-hidden flex flex-col lg:flex-row hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+              className="group bg-white rounded-lg shadow-lg overflow-hidden flex flex-col lg:flex-row hover:shadow-xl hover:scale-[1.01] transition-all duration-300"
             >
               {/* Swiper Image Section */}
               <div className="w-full lg:w-1/2 overflow-hidden">
@@ -234,10 +234,11 @@ const ProductPage = () => {
                     delay: 3000,
                     disableOnInteraction: false,
                   }}
+                  speed={1000}
                   loop={true}
                   pagination={{ clickable: true }}
                   navigation={true}
-                  modules={[Navigation, Pagination, Autoplay]}
+                  modules={[Navigation, Pagination, Autoplay, EffectFade]}
                   className="h-full mySwiper"
                 >
                   {deal.images.map((img, imgIndex) => (

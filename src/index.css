@@ -89,14 +89,12 @@ button:focus-visible {
   }
 } */
 
-/* Make arrow color black and control glyph size via Swiper vars */
 .mySwiper {
-  --swiper-navigation-color: #000;   /* arrow glyph color fallback */
-  --swiper-theme-color: #000;        /* also affects pagination if needed */
-  --swiper-navigation-size: 18px;    /* arrow glyph size */
+  --swiper-navigation-color: #000;   
+  --swiper-theme-color: #000;        
+  --swiper-navigation-size: 18px;    
 }
 
-/* Base buttons: circle, sky bg, centered, hidden by default */
 .mySwiper .swiper-button-next,
 .mySwiper .swiper-button-prev {
   position: absolute;
@@ -104,9 +102,9 @@ button:focus-visible {
   transform: translateY(-50%);
   width: 36px;
   height: 36px;
-  border-radius: 9999px;              /* full rounded */
-  background-color: white;          /* sky-400 */
-  color: #000;                         /* for safety */
+  border-radius: 9999px;              
+  background-color: white;          
+  color: #000;                         
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,25 +115,21 @@ button:focus-visible {
   transition: opacity .2s ease, background-color .2s ease, transform .2s ease;
 }
 
-/* Arrow glyph itself lives on ::after — set color/size here too */
 .mySwiper .swiper-button-next::after,
 .mySwiper .swiper-button-prev::after {
-  color: #000;                        /* black arrow */
-  font-size: 18px;                    /* keep in sync with var above */
+  color: #000;                        
+  font-size: 18px;                    
 }
 
-/* Place left/right */
 .mySwiper .swiper-button-prev { left: 8px; }
 .mySwiper .swiper-button-next { right: 8px; }
 
-/* Show arrows when hovering the card (card has .group on it) */
 .group:hover .mySwiper .swiper-button-next,
 .group:hover .mySwiper .swiper-button-prev {
   opacity: 1;
   visibility: visible;
 }
 
-/* Hover effect on the buttons */
 .mySwiper .swiper-button-next:hover,
 .mySwiper .swiper-button-prev:hover {
   transform: translateY(-50%) scale(1.08);
