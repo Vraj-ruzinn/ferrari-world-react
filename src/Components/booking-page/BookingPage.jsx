@@ -5,8 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 const BookingPage = () => {
-  
-    const validationSchema = Yup.object({
+  const validationSchema = Yup.object({
     firstName: Yup.string().required("First Name is required"),
     lastName: Yup.string().required("Last Name is required"),
     email: Yup.string()
@@ -25,7 +24,7 @@ const BookingPage = () => {
     country: Yup.string().required("Country is required"),
   });
 
-   const initialValues = {
+  const initialValues = {
     firstName: "",
     lastName: "",
     email: "",
@@ -46,56 +45,56 @@ const BookingPage = () => {
     <div>
       <Header />
 
-      <div className=" container mx-auto text-black bg-gray-50">
+      <div className="container mx-auto px-4 md:px-6 lg:px-10 xl:px-16 py-8 bg-gray-50 text-black">
         {/* Main Content */}
-        <div className="px-4 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Side - Booking Form */}
           <div className="lg:col-span-2 space-y-8">
-             <Formik
+            <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
               onSubmit={handleSubmit}
             >
               <Form>
                 {/* Booking Section */}
-                <div className="bg-white shadow-md rounded-lg p-6">
-                  <h2 className="text-lg font-semibold mb-4">
+                <div className="bg-white shadow-md rounded-lg p-4 sm:p-6">
+                  <h2 className="text-base sm:text-lg font-semibold mb-4">
                     Booking Details
                   </h2>
 
                   {/* First + Last Name */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block mb-1 text-left">
+                      <label className="block mb-1 text-left text-sm sm:text-base">
                         First Name *
                       </label>
                       <Field
                         type="text"
                         name="firstName"
                         placeholder="First Name"
-                        className="border rounded-md px-3 py-2 w-full"
+                        className="border rounded-md px-3 py-2 w-full hover:border-sky-400 focus:border-sky-500 transition duration-200"
                       />
                       <ErrorMessage
                         name="firstName"
                         component="div"
-                        className="text-red-500 text-sm text-left"
+                        className="text-red-500 text-xs sm:text-sm text-left"
                       />
                     </div>
 
                     <div>
-                      <label className="block mb-1 text-left">
+                      <label className="block mb-1 text-left text-sm sm:text-base">
                         Last Name *
                       </label>
                       <Field
                         type="text"
                         name="lastName"
                         placeholder="Last Name"
-                        className="border rounded-md px-3 py-2 w-full"
+                        className="border rounded-md px-3 py-2 w-full hover:border-sky-400 focus:border-sky-500 transition duration-200"
                       />
                       <ErrorMessage
                         name="lastName"
                         component="div"
-                        className="text-red-500 text-sm text-left"
+                        className="text-red-500 text-xs sm:text-sm text-left"
                       />
                     </div>
                   </div>
@@ -103,27 +102,31 @@ const BookingPage = () => {
                   {/* Email + Phone */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                     <div>
-                      <label className="block mb-1 text-left">Email *</label>
+                      <label className="block mb-1 text-left text-sm sm:text-base">
+                        Email *
+                      </label>
                       <Field
                         type="email"
                         name="email"
                         placeholder="Email"
-                        className="border rounded-md px-3 py-2 w-full"
+                        className="border rounded-md px-3 py-2 w-full hover:border-sky-400 focus:border-sky-500 transition duration-200"
                       />
                       <ErrorMessage
                         name="email"
                         component="div"
-                        className="text-red-500 text-sm text-left"
+                        className="text-red-500 text-xs sm:text-sm text-left"
                       />
                     </div>
 
                     <div className="flex gap-2">
-                      <div>
-                        <label className="block mb-1 text-left">Code *</label>
+                      <div className="w-24 sm:w-28">
+                        <label className="block mb-1 text-left text-sm sm:text-base">
+                          Code *
+                        </label>
                         <Field
                           as="select"
                           name="phoneCode"
-                          className="border rounded-md px-3 py-2"
+                          className="border rounded-md px-3 py-2 w-full hover:border-sky-400 focus:border-sky-500 transition duration-200"
                         >
                           <option value="+971">+971</option>
                           <option value="+91">+91</option>
@@ -132,43 +135,45 @@ const BookingPage = () => {
                         <ErrorMessage
                           name="phoneCode"
                           component="div"
-                          className="text-red-500 text-sm text-left"
+                          className="text-red-500 text-xs sm:text-sm text-left"
                         />
                       </div>
 
                       <div className="flex-1">
-                        <label className="block mb-1 text-left">
+                        <label className="block mb-1 text-left text-sm sm:text-base">
                           Phone Number *
                         </label>
                         <Field
                           type="text"
                           name="phoneNumber"
                           placeholder="Phone Number"
-                          className="border rounded-md px-3 py-2 w-full"
+                          className="border rounded-md px-3 py-2 w-full hover:border-sky-400 focus:border-sky-500 transition duration-200"
                         />
                         <ErrorMessage
                           name="phoneNumber"
                           component="div"
-                          className="text-red-500 text-sm text-left"
+                          className="text-red-500 text-xs sm:text-sm text-left"
                         />
                       </div>
                     </div>
                   </div>
 
                   {/* Promo Code */}
-                  <div className="mt-4 flex gap-2 items-end">
-                    <div className="flex-1">
-                      <label className="block mb-1 text-left">Promo Code</label>
+                  <div className="mt-4 flex flex-col sm:flex-row gap-2 items-start sm:items-end">
+                    <div className="flex-1 w-full">
+                      <label className="block mb-1 text-left text-sm sm:text-base">
+                        Promo Code
+                      </label>
                       <Field
                         type="text"
                         name="promoCode"
                         placeholder="Code"
-                        className="border rounded-md px-3 py-2 w-full"
+                        className="border rounded-md px-3 py-2 w-full hover:border-sky-400 focus:border-sky-500 transition duration-200"
                       />
                     </div>
                     <button
                       type="button"
-                      className="bg-green-500 text-white px-4 h-10 rounded-md hover:bg-green-600 transition"
+                      className="w-full sm:w-auto bg-green-500 text-white px-4 h-10 rounded-md hover:bg-green-600 transition"
                     >
                       Apply
                     </button>
@@ -176,80 +181,88 @@ const BookingPage = () => {
                 </div>
 
                 {/* Card Payment Section */}
-                <div className="bg-white shadow-md rounded-lg p-6 mt-8">
-                  <h2 className="text-lg font-semibold mb-4">Payment</h2>
+                <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 mt-8">
+                  <h2 className="text-base sm:text-lg font-semibold mb-4">
+                    Payment
+                  </h2>
 
                   {/* Card Number */}
                   <div className="mb-4 relative">
-                    <label className="block mb-1 text-left">Card number</label>
+                    <label className="block mb-1 text-left text-sm sm:text-base">
+                      Card number
+                    </label>
                     <Field
                       type="text"
                       name="cardNumber"
                       placeholder="1234 1234 1234 1234"
-                      className="border rounded-md px-3 py-2 w-full pr-16"
+                      className="border rounded-md px-3 py-2 w-full pr-16 hover:border-sky-400 focus:border-sky-500 transition duration-200"
                     />
                     {/* Visa + Mastercard icons */}
                     <div className="absolute right-3 top-9 flex gap-1">
                       <img
                         src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"
                         alt="Visa"
-                        className="h-5"
+                        className="h-4 sm:h-5"
                       />
                       <img
                         src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png"
                         alt="Mastercard"
-                        className="h-5"
+                        className="h-4 sm:h-5"
                       />
                     </div>
                     <ErrorMessage
                       name="cardNumber"
                       component="div"
-                      className="text-red-500 text-sm text-left"
+                      className="text-red-500 text-xs sm:text-sm text-left"
                     />
                   </div>
 
                   {/* Expiry + CVV */}
-                  <div className="grid grid-cols-2 gap-4 mb-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                     <div>
-                      <label className="block mb-1 text-left">Expiry date</label>
+                      <label className="block mb-1 text-left text-sm sm:text-base">
+                        Expiry date
+                      </label>
                       <Field
                         type="text"
                         name="expiry"
                         placeholder="MM / YY"
-                        className="border rounded-md px-3 py-2 w-full"
+                        className="border rounded-md px-3 py-2 w-full hover:border-sky-400 focus:border-sky-500 transition duration-200"
                       />
                       <ErrorMessage
                         name="expiry"
                         component="div"
-                        className="text-red-500 text-sm text-left"
+                        className="text-red-500 text-xs sm:text-sm text-left"
                       />
                     </div>
 
                     <div>
-                      <label className="block mb-1 text-left">
+                      <label className="block mb-1 text-left text-sm sm:text-base">
                         Security code
                       </label>
                       <Field
                         type="text"
                         name="cvv"
                         placeholder="CVC"
-                        className="border rounded-md px-3 py-2 w-full"
+                        className="border rounded-md px-3 py-2 w-full hover:border-sky-400 focus:border-sky-500 transition duration-200"
                       />
                       <ErrorMessage
                         name="cvv"
                         component="div"
-                        className="text-red-500 text-sm text-left"
+                        className="text-red-500 text-xs sm:text-sm text-left"
                       />
                     </div>
                   </div>
 
                   {/* Country */}
                   <div className="mb-4">
-                    <label className="block mb-1 text-left">Country</label>
+                    <label className="block mb-1 text-left text-sm sm:text-base">
+                      Country
+                    </label>
                     <Field
                       as="select"
                       name="country"
-                      className="border rounded-md px-3 py-2 w-full"
+                      className="border rounded-md px-3 py-2 w-full hover:border-sky-400 focus:border-sky-500 transition duration-200"
                     >
                       <option value="India">India</option>
                       <option value="UAE">UAE</option>
@@ -259,7 +272,7 @@ const BookingPage = () => {
                     <ErrorMessage
                       name="country"
                       component="div"
-                      className="text-red-500 text-sm text-left"
+                      className="text-red-500 text-xs sm:text-sm text-left"
                     />
                   </div>
 
@@ -267,22 +280,22 @@ const BookingPage = () => {
                   <div className="text-right">
                     <button
                       type="submit"
-                      className="bg-sky-500 text-white px-6 py-2 rounded-md hover:bg-sky-600 transition"
+                      className="w-full sm:w-auto bg-sky-500 text-white px-6 py-2 rounded-md hover:bg-sky-600 transition"
                     >
                       CONTINUE TO PAYMENT
                     </button>
                   </div>
                 </div>
               </Form>
-            </Formik>    
+            </Formik>
           </div>
 
           {/* Right Side - Booking Summary */}
-          <div className="bg-white shadow-md rounded-lg p-6">
-            <h2 className="text-lg font-semibold mb-2">
+          <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 h-fit lg:sticky lg:top-6">
+            <h2 className="text-base sm:text-lg font-semibold mb-2">
               Atlantis Aquaventure Waterpark
             </h2>
-            <p className="text-sm text-gray-500 mb-4">
+            <p className="text-xs sm:text-sm text-gray-500 mb-4">
               Atlantis Aquaventure Day Pass
             </p>
 
@@ -298,24 +311,24 @@ const BookingPage = () => {
               </span>
             </div>
 
-            <p className="text-sm text-gray-600 mb-2">
+            <p className="text-xs sm:text-sm text-gray-600 mb-2">
               <strong>Date:</strong> Wed, Sep 17, 2025 10:00 AM
             </p>
 
             <div className="border-t my-4"></div>
 
-            <div className="flex justify-between text-sm mb-2">
+            <div className="flex justify-between text-xs sm:text-sm mb-2">
               <span>Adult (8+)</span>
               <span>2 x AED 330.00</span>
             </div>
-            <div className="flex justify-between text-sm mb-2">
+            <div className="flex justify-between text-xs sm:text-sm mb-2">
               <span>Child (3-7 Years)</span>
               <span>2 x AED 280.00</span>
             </div>
 
             <div className="border-t my-4"></div>
 
-            <div className="flex justify-between font-semibold">
+            <div className="flex justify-between font-semibold text-sm sm:text-base">
               <span>Total</span>
               <span>AED 1220.00</span>
             </div>
