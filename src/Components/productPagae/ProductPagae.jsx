@@ -225,36 +225,10 @@ const ProductPage = () => {
               href={deal.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white rounded-lg shadow-lg overflow-hidden flex flex-col lg:flex-row hover:shadow-xl hover:scale-[1.01] transition-all duration-300"
+              className="group bg-white rounded-lg shadow-lg overflow-hidden flex flex-col hover:shadow-xl hover:scale-[1.01] transition-all duration-300"
             >
-              {/* Swiper Image Section */}
-              <div className="w-full lg:w-1/2 overflow-hidden">
-                <Swiper
-                  autoplay={{
-                    delay: 3000,
-                    disableOnInteraction: false,
-                  }}
-                  speed={1000}
-                  loop={true}
-                  pagination={{ clickable: true }}
-                  navigation={true}
-                  modules={[Navigation, Pagination, Autoplay, EffectFade]}
-                  className="h-full mySwiper"
-                >
-                  {deal.images.map((img, imgIndex) => (
-                    <SwiperSlide key={imgIndex}>
-                      <img
-                        src={img}
-                        alt={`${deal.title} - ${imgIndex + 1}`}
-                        className="w-full h-full object-cover"
-                      />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </div>
-
-              {/* Info Section */}
-              <div className="w-full lg:w-1/2 p-5 flex flex-col text-left justify-between">
+              {/* Info Section Full Width */}
+              <div className="w-full p-5 flex flex-col text-left justify-between">
                 <div>
                   {/* Title */}
                   <h2 className="font-bold text-xl text-gray-900 mb-2">
@@ -267,7 +241,7 @@ const ProductPage = () => {
                       href="https://rathin.com/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap- cursor-pointer hover:underline"
+                      className="flex items-center gap-1 cursor-pointer hover:underline"
                     >
                       📅 Book now, pay later
                     </a>
@@ -289,11 +263,12 @@ const ProductPage = () => {
                   {/* More details */}
                   <Link
                     to={`/product-pagae`}
-                    className="text-sm text-black justify-between font-bold hover:underline mt-2"
+                    className="text-sm text-black font-bold hover:underline mt-2 inline-block"
                   >
                     More details →
                   </Link>
                 </div>
+
                 <div className="border-t border-gray-300 my-3"></div>
 
                 {/* Price + Availability */}
@@ -351,12 +326,12 @@ const ProductPage = () => {
                 modules={[Navigation]}
                 navigation={true}
                 breakpoints={{
-                  480: { slidesPerView: 1, spaceBetween: 16 }, // small mobiles
-                  640: { slidesPerView: 1, spaceBetween: 20 }, // bigger mobiles
-                  768: { slidesPerView: 2, spaceBetween: 24 }, // tablets
-                  1024: { slidesPerView: 3, spaceBetween: 28 }, // laptops
-                  1280: { slidesPerView: 3, spaceBetween: 32 }, // desktops
-                  1536: { slidesPerView: 4, spaceBetween: 36 }, // very large screens
+                  480: { slidesPerView: 1, spaceBetween: 16 },
+                  640: { slidesPerView: 1, spaceBetween: 20 },
+                  768: { slidesPerView: 2, spaceBetween: 24 },
+                  1024: { slidesPerView: 3, spaceBetween: 28 },
+                  1280: { slidesPerView: 3, spaceBetween: 32 },
+                  1536: { slidesPerView: 4, spaceBetween: 36 },
                 }}
                 className="mySwiper !pl-0"
               >
@@ -414,8 +389,8 @@ const ProductPage = () => {
             slidesPerView={2}
             spaceBetween={20}
             navigation={true}
-            autoplay={{ 
-              delay: 3000, 
+            autoplay={{
+              delay: 3000,
               disableOnInteraction: false,
             }}
             speed={1000}
@@ -522,3 +497,34 @@ const ProductPage = () => {
 };
 
 export default ProductPage;
+
+// this is my swipper image section in cards
+{
+  /* Swiper Image Section */
+}
+{
+  /* <div className="w-full lg:w-1/2 overflow-hidden">
+                <Swiper
+                  autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                  }}
+                  speed={1000}
+                  loop={true}
+                  pagination={{ clickable: true }}
+                  navigation={true}
+                  modules={[Navigation, Pagination, Autoplay, EffectFade]}
+                  className="h-full mySwiper"
+                >
+                  {deal.images.map((img, imgIndex) => (
+                    <SwiperSlide key={imgIndex}>
+                      <img
+                        src={img}
+                        alt={`${deal.title} - ${imgIndex + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div> */
+}
