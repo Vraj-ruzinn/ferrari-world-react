@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 import "swiper/css";
@@ -21,7 +21,7 @@ const CardSection = () => {
         "Access to rides and shows as per ticket type",
         "E-ticket delivered via email for easy entry",
         "Digital delivery of all tickets",
-         "Access to rides and shows as per ticket type",
+        "Access to rides and shows as per ticket type",
         "E-ticket delivered via email for easy entry",
         "E-ticket delivered via email for easy entry",
       ],
@@ -108,9 +108,32 @@ const CardSection = () => {
     },
   ];
 
+  const [activeCity, setActiveCity] = useState("Dubai");
+
+  const cities = ["Dubai", "Abu Dhabi", "Sharjah", "Singapore"];
+
   return (
     <section className="container mx-auto">
       <div id="booking-tickets" className="mt-4 px-4 font-">
+
+        {/* City Buttons */}
+        <div className="flex flex-wrap justify-center sm:justify-start gap-3 mb-6">
+          {cities.map((city) => (
+            <button
+              key={city}
+              onClick={() => setActiveCity(city)}
+              className={`flex items-center gap-2 px-5 py-2 rounded-full font-semibold transition-all duration-300
+        ${
+          activeCity === city
+            ? "bg-sky-500 text-white shadow-lg" 
+            : "bg-white text-gray-700 border hover:text-sky-500" 
+        }`}
+            >
+              <span></span> {city}
+            </button>
+          ))}
+        </div>
+
         {/* Page Title */}
         <div className="mt-15 sm:text-left text-center ">
           <div className="inline-block">
