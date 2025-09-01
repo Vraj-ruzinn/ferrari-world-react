@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import Header from "../header/Header";
 import Footersection from "../footersection/Footersection";
 
-// ✅ Validation Schema
+// Validation Schema
 const ContactSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),
   email: Yup.string().email("Invalid email format").required("Email is required"),
@@ -84,7 +84,7 @@ const ContactUs = () => {
               validationSchema={ContactSchema}
               onSubmit={(values, { resetForm }) => {
                 console.log("Form Submitted:", values);
-                alert("Message Sent Successfully ✅");
+                alert("Message Sent Successfully");
                 resetForm();
               }}
             >
