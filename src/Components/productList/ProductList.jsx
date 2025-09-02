@@ -1,22 +1,214 @@
 import React, { useEffect } from "react";
 import Header from "../header/Header";
 import Footersection from "../footersection/Footersection";
-import { GiLaurelCrown } from "react-icons/gi";
-import { RiBookOpenLine } from "react-icons/ri";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
-import { Calendar, MessageCircle } from "lucide-react";
+import { Calendar, Star } from "lucide-react";
 import { FaShieldAlt, FaTicketAlt } from "react-icons/fa";
 import { FaGlobe, FaHeadset } from "react-icons/fa6";
+import { useState } from "react";
 
 const ProductPage = () => {
   const deals = [
     {
-      title: "Ferrari World Theme Park",
+      title: "Ferrari World Theme Park ",
+       rating: 4.0,
+      images: [
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
+      ],
+      features: [
+        "Park admission ticket for Ferrari World Abu Dhabi",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+      ],
+    },
+    {
+      title: "Ferrari World Theme Park ",
+       rating: 4.0,
+      images: [
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
+      ],
+      features: [
+        "Park admission ticket for Ferrari World Abu Dhabi",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+      ],
+    },
+    {
+      title: "Ferrari World Theme Park ",
+       rating: 4.0,
+      images: [
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
+      ],
+      features: [
+        "Park admission ticket for Ferrari World Abu Dhabi",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+      ],
+    },
+    {
+      title: "Ferrari World Theme Park ",
+       rating: 4.0,
+      images: [
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
+      ],
+      features: [
+        "Park admission ticket for Ferrari World Abu Dhabi",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+      ],
+    },
+    {
+      title: "Ferrari World Theme Park ",
+       rating: 4.0,
+      images: [
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
+      ],
+      features: [
+        "Park admission ticket for Ferrari World Abu Dhabi",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+      ],
+    },
+    {
+      title: "Ferrari World Theme Park ",
+       rating: 4.0,
+      images: [
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
+      ],
+      features: [
+        "Park admission ticket for Ferrari World Abu Dhabi",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+      ],
+    },
+    {
+      title: "Ferrari World Theme Park ",
+       rating: 4.0,
+      images: [
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
+      ],
+      features: [
+        "Park admission ticket for Ferrari World Abu Dhabi",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+      ],
+    },
+    {
+      title: "Ferrari World Theme Park ",
+       rating: 4.0,
+      images: [
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
+      ],
+      features: [
+        "Park admission ticket for Ferrari World Abu Dhabi",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+      ],
+    },
+    {
+      title: "Ferrari World Theme Park ",
+       rating: 4.0,
+      images: [
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
+      ],
+      features: [
+        "Park admission ticket for Ferrari World Abu Dhabi",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+      ],
+    },
+    {
+      title: "Ferrari World Theme Park ",
+       rating: 4.0,
+      images: [
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
+      ],
+      features: [
+        "Park admission ticket for Ferrari World Abu Dhabi",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+      ],
+    },
+    {
+      title: "Ferrari World Theme Park ",
+       rating: 4.0,
+      images: [
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
+      ],
+      features: [
+        "Park admission ticket for Ferrari World Abu Dhabi",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+      ],
+    },
+    {
+      title: "Ferrari World Theme Park ",
+       rating: 4.0,
+      images: [
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
+        "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
+      ],
+      features: [
+        "Park admission ticket for Ferrari World Abu Dhabi",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+        "Access to rides and shows as per ticket type",
+        "E-ticket delivered via email for easy entry",
+      ],
+    },
+    {
+      title: "Ferrari World Theme Park ",
+       rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -32,6 +224,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park tickets + Free Transfers",
+       rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
@@ -47,6 +240,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park + Qasr Al Watan Abu Dhabi",
+       rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -63,6 +257,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park + Yas Water World Day Pass",
+       rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Yas-Water-World-Day-Pass.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -79,6 +274,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park + Atlantis Day Pass",
+       rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-plus-Park-Atlantis-Day-Pass.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -95,6 +291,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park + Louvre Abu Dhabi",
+      
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Louvre-Abu-Dhabi.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -144,9 +341,21 @@ const ProductPage = () => {
     },
   ];
 
-   useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
+  
+
+  // State to control visible cards
+  const [visibleCount, setVisibleCount] = useState(6);
+
+  // Function to show more products
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + 6);
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+const { city } = useParams();
 
   return (
     <div>
@@ -154,8 +363,8 @@ const ProductPage = () => {
 
       {/* Product Section */}
       <div className="container mx-auto px-4">
-        <section className=" p-4 grid grid-cols-1 lg:grid-cols-2 gap-6 items-cente shadow-lg rounded-2xl mt-8">
-          {/* Left Side: Heading + Content */}
+        {/* <section className=" p-4 grid grid-cols-1 lg:grid-cols-2 gap-6 items-cente shadow-lg rounded-2xl mt-8">
+          Left Side: Heading + Content
           <div className="order-2 lg:order-none flex flex-col justify-center text-left">
             <h1 className="text-black text-3xl md:text-4xl font-bold mb-4">
               Ferrari World Abu Dhabi
@@ -167,9 +376,9 @@ const ProductPage = () => {
               with excitement and luxury.
             </p>
 
-            {/* Feature Section */}
+            Feature Section
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-              {/* Card 1 */}
+              Card 1
               <div className="flex items-start gap-3 p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
                 <div className="bg-green-100 p-2 rounded-lg flex flex-col items-center justify-center">
                   <GiLaurelCrown className="text-sky-600 text-4xl" />
@@ -188,7 +397,7 @@ const ProductPage = () => {
                 </div>
               </div>
 
-              {/* Card 2 */}
+              Card 2
               <div className="flex items-start gap-3 p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
                 <div className="bg-green-100 p-2 rounded-lg flex items-center justify-center">
                   <RiBookOpenLine className="w-6 h-6 text-sky-600" />
@@ -206,7 +415,7 @@ const ProductPage = () => {
             </div>
           </div>
 
-          {/* Video */}
+          Video
           <div className="order-1 lg:order-none w-full h-64 sm:h-80 md:h-96 lg:h-auto">
             <video
               src="https://static.myconnect.ae/-/media/yasconnect/project/fwad/videos/ranveer2022.mp4"
@@ -217,94 +426,116 @@ const ProductPage = () => {
               className="w-full h-full object-cover rounded-xl shadow-md"
             ></video>
           </div>
-        </section>
+        </section> */}
+
+        {/* Page Title */}
+        <div className="mt-15 sm:text-left text-center">
+          <div className="inline-block">
+            <h1 className="text-[20px] font-bold md:text-2xl lg:text-3xl text-gray-900">
+              Popular things to do in {city}
+            </h1>
+            <div className="h-1 bg-orange-400 mt-2 w-full"></div>
+          </div>
+        </div>
 
         <div className="border-t border-gray-300 my-3 mt-7"></div>
 
         {/* Cards Section */}
-        <div className="mt-8 mb-8 space-y-8">
-          {deals.map((deal, index) => (
-            <a
+        <div className="mt-8 mb-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+          {deals.slice(0, visibleCount).map((deal, index) => (
+            <div
               key={index}
-              href={deal.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-white rounded-lg shadow-lg overflow-hidden flex flex-col hover:shadow-xl hover:scale-[1.01] transition-all duration-300"
+              className="group bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full hover:shadow-xl hover:scale-[1.01] transition-all duration-300"
             >
-              {/* Info Section Full Width */}
-              <div className="w-full p-5 flex flex-col text-left justify-between">
-                <div>
-                  {/* Title */}
-                  <h2 className="font-bold text-xl text-gray-900 mb-2">
+              {/* Swiper Image Section */}
+              <div className="w-full h-64 overflow-hidden relative">
+                <Swiper
+                  autoplay={{ delay: 3000, disableOnInteraction: false }}
+                  loop
+                  speed={1000}
+                  pagination={{ clickable: true }}
+                  navigation
+                  modules={[Navigation, Pagination, Autoplay, EffectFade]}
+                  className="h-full mySwiper"
+                >
+                  {deal.images.map((img, imgIndex) => (
+                    <SwiperSlide key={imgIndex}>
+                      <img
+                        src={img}
+                        alt={`${deal.title} - ${imgIndex + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+
+              {/* Info Section */}
+               <div className="w-full p-5 flex flex-col flex-1 text-left">
+                {/* Title + Rating in one row */}
+                <div className="flex items-start justify-between gap-3">
+
+                  <h2 className="font-bold text-lg text-gray-900 min-h-[52px] overflow-hidden text-ellipsis">
                     {deal.title}
                   </h2>
 
-                  {/* Features Row */}
-                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-3 flex-wrap">
-                    <a
-                      href="https://rathin.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 cursor-pointer hover:underline"
-                    >
-                      📅 Book now, pay later
-                    </a>
-                    <span className="flex items-center gap-1">
-                      ⏳ Flexible duration
-                    </span>
-                    <span className="flex items-center gap-1">
-                      🍽 Meals included
-                    </span>
-                  </div>
-
-                  {/* Bullet points */}
-                  <ul className="list-disc pl-5 mt-2 text-gray-700 space-y-1 text-sm">
-                    {deal.features.map((feature, fIndex) => (
-                      <li key={fIndex}>{feature}</li>
-                    ))}
-                  </ul>
-
-                  {/* More details */}
-                  <Link
-                    to={`/product-pagae`}
-                    className="text-sm text-black font-bold hover:underline mt-2 inline-block"
-                  >
-                    More details →
-                  </Link>
+                  {/* Rating */}
+                  {deal.rating != null && (
+                    <div className="flex items-center gap-1 text-sm font-semibold shrink-0">
+                      <Star
+                        size={16}
+                        className="text-yellow-400"
+                        fill="currentColor"
+                      />
+                      <span className="text-gray-700">
+                        {deal.rating.toFixed(1)}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
-                <div className="border-t border-gray-300 my-3"></div>
+                <div className="border-t border-gray-200 my-3"></div>
 
-                {/* Price + Availability */}
-                <div className="flex justify-between items-center gap-3 flex-wrap">
-                  {/* Price + Discount */}
-                  <div>
-                    <div className="text-sm text-gray-500">from</div>
+                {/* Price + Button */}
+                <div className="mt-auto flex items-end justify-between">
+                  {/* Price + Offer */}
+                  <div className="flex flex-col">
+                    <p className="text-sm text-gray-500">from</p>
                     <div className="flex items-center gap-2">
-                      <div className="text-lg font-bold text-gray-900">
+                      <span className="text-xl font-bold text-gray-900">
                         ₹3,785
-                      </div>
+                      </span>
                       <span className="bg-sky-500 text-white text-xs font-bold px-2 py-1 rounded-lg">
                         20% OFF
                       </span>
                     </div>
                   </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex gap-2 flex-wrap">
-                    <Link
-                      to={`/availability/${index}`}
-                      className="flex items-center gap-2 bg-sky-400 text-white font-bold cursor-pointer text-sm px-4 py-2 rounded-lg hover:bg-sky-300 transition-colors duration-300"
-                    >
-                      <Calendar size={16} />
-                      Check availability
-                    </Link>
-                  </div>
+                  {/* Book Ticket Button */}
+                  <Link
+                    to={`/product-page`}
+                    className="flex items-center gap-2 bg-sky-400 text-white font-bold text-sm px-4 py-2 rounded-lg hover:bg-sky-300 transition-colors duration-300"
+                  >
+                    <Calendar size={16} />
+                    Book Ticket
+                  </Link>
                 </div>
               </div>
-            </a>
+            </div>
           ))}
         </div>
+
+        {/* Load More Button */}
+        {visibleCount < deals.length && (
+          <div className="text-center mt-6">
+            <button
+              onClick={handleLoadMore}
+              className="bg-sky-500 text-white font-bold px-6 py-2 rounded-lg shadow hover:bg-sky-400 transition-colors duration-300"
+            >
+              Load More
+            </button>
+          </div>
+        )}
 
         {/* View Card Section */}
         <div className="mb-8">
