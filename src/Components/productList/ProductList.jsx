@@ -16,7 +16,7 @@ const ProductPage = () => {
   const deals = [
     {
       title: "Ferrari World Theme Park ",
-       rating: 4.0,
+      rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -32,7 +32,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park ",
-       rating: 4.0,
+      rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -48,7 +48,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park ",
-       rating: 4.0,
+      rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -64,7 +64,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park ",
-       rating: 4.0,
+      rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -80,7 +80,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park ",
-       rating: 4.0,
+      rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -96,7 +96,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park ",
-       rating: 4.0,
+      rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -112,7 +112,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park ",
-       rating: 4.0,
+      rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -128,7 +128,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park ",
-       rating: 4.0,
+      rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -144,7 +144,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park ",
-       rating: 4.0,
+      rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -160,7 +160,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park ",
-       rating: 4.0,
+      rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -176,7 +176,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park ",
-       rating: 4.0,
+      rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -192,7 +192,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park ",
-       rating: 4.0,
+      rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -208,7 +208,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park ",
-       rating: 4.0,
+      rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -224,7 +224,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park tickets + Free Transfers",
-       rating: 4.0,
+      rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
@@ -240,7 +240,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park + Qasr Al Watan Abu Dhabi",
-       rating: 4.0,
+      rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Qasr-Al-Watan-Abu-Dhabi.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -257,7 +257,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park + Yas Water World Day Pass",
-       rating: 4.0,
+      rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Yas-Water-World-Day-Pass.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -274,7 +274,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park + Atlantis Day Pass",
-       rating: 4.0,
+      rating: 4.0,
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-plus-Park-Atlantis-Day-Pass.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -291,7 +291,7 @@ const ProductPage = () => {
     },
     {
       title: "Ferrari World Theme Park + Louvre Abu Dhabi",
-      
+
       images: [
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-Louvre-Abu-Dhabi.jpg",
         "https://d1i3enf1i5tb1f.cloudfront.net/landing-page/img-ferrari/Ferrari-World-Theme-Park-tickets-Free-Transfers.jpg",
@@ -341,8 +341,6 @@ const ProductPage = () => {
     },
   ];
 
-  
-
   // State to control visible cards
   const [visibleCount, setVisibleCount] = useState(6);
 
@@ -355,7 +353,7 @@ const ProductPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-const { city } = useParams();
+  const { city } = useParams();
 
   return (
     <div>
@@ -471,10 +469,9 @@ const { city } = useParams();
               </div>
 
               {/* Info Section */}
-               <div className="w-full p-5 flex flex-col flex-1 text-left">
+              <div className="w-full p-5 flex flex-col flex-1 text-left">
                 {/* Title + Rating in one row */}
                 <div className="flex items-start justify-between gap-3">
-
                   <h2 className="font-bold text-lg text-gray-900 min-h-[52px] overflow-hidden text-ellipsis">
                     {deal.title}
                   </h2>
@@ -495,9 +492,9 @@ const { city } = useParams();
                 </div>
 
                 <div className="border-t border-gray-200 my-3"></div>
-
+                <div className="flex-grow"></div>
                 {/* Price + Button */}
-                <div className="mt-auto flex items-end justify-between">
+                <div className="flex items-end justify-between">
                   {/* Price + Offer */}
                   <div className="flex flex-col">
                     <p className="text-sm text-gray-500">from</p>
@@ -514,10 +511,9 @@ const { city } = useParams();
                   {/* Book Ticket Button */}
                   <Link
                     to={`/product-page`}
-                    className="flex items-center gap-2 bg-sky-400 text-white font-bold text-sm px-4 py-2 rounded-lg hover:bg-sky-300 transition-colors duration-300"
+                    className="px-6 py-2 bg-sky-400 text-white font-semibold rounded-lg hover:bg-sky-300 transition-colors duration-300"
                   >
-                    <Calendar size={16} />
-                    Book Ticket
+                    Book Now
                   </Link>
                 </div>
               </div>

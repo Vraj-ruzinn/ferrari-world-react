@@ -522,9 +522,9 @@ const CardSection = () => {
                 </div>
 
                 <div className="border-t border-gray-200 my-3"></div>
-
+                <div className="flex-grow"></div>
                 {/* Price + Button */}
-                <div className="mt-auto flex items-end justify-between">
+                <div className="flex items-end justify-between">
                   {/* Price + Offer */}
                   <div className="flex flex-col">
                     <p className="text-sm text-gray-500">from</p>
@@ -539,14 +539,12 @@ const CardSection = () => {
                   </div>
 
                   {/* Book Ticket Button */}
-                  <div className="mt-20">
-                    <Link
-                      to={`/product-page`}
-                      className="mt-6 w-full p-7 text-center bg-sky-400 text-white font-semibold py-2 rounded-lg hover:bg-sky-300 transition-colors duration-300"
-                    >
-                      Book Now
-                    </Link>
-                  </div>
+                  <Link
+                    to={`/product-page`}
+                    className="px-6 py-2 bg-sky-400 text-white font-semibold rounded-lg hover:bg-sky-300 transition-colors duration-300"
+                  >
+                    Book Now
+                  </Link>
                 </div>
               </div>
             </div>
