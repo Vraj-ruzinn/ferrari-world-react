@@ -486,68 +486,66 @@ const ProductPage = () => {
               </div>
 
               {/* Info Section */}
-<div className="w-full p-5 flex flex-col flex-1 text-left">
-  {/* Title + Rating in one row */}
-  <div className="flex items-start justify-between gap-3">
-    <h2 className="font-bold text-lg text-gray-900 min-h-[52px] overflow-hidden text-ellipsis">
-      {deal.title}
-    </h2>
+              <div className="w-full p-5 flex flex-col flex-1 text-left">
+                {/* Title + Rating in one row */}
+                <div className="flex items-start justify-between gap-3">
+                  <h2 className="font-bold text-lg text-gray-900 min-h-[52px] overflow-hidden text-ellipsis">
+                    {deal.title}
+                  </h2>
 
-    {/* Rating */}
-    {deal.rating != null && (
-      <div className="flex items-center gap-1 text-sm font-semibold shrink-0">
-        <Star size={16} className="text-yellow-400" fill="currentColor" />
-        <span className="text-gray-700">{deal.rating.toFixed(1)}</span>
-      </div>
-    )}
-  </div>
+                  {/* Rating */}
+                  {deal.rating != null && (
+                    <div className="flex items-center gap-1 text-sm font-semibold shrink-0">
+                      <Star
+                        size={16}
+                        className="text-yellow-400"
+                        fill="currentColor"
+                      />
+                      <span className="text-gray-700">
+                        {deal.rating.toFixed(1)}
+                      </span>
+                    </div>
+                  )}
+                </div>
 
-  {/* ✅ Availability */}
-  {deal.availableToday ? (
-    <p className="text-green-600 text-sm font-semibold mt-1">
-      Available Today
-    </p>
-  ) : (
-    <p className="text-red-600 text-sm font-semibold mt-1">
-      Not Available Today
-    </p>
-  )}
+                {/* Availability */}
+                {deal.availableToday ? (
+                  <p className="text-green-600 text-sm font-semibold mt-1">
+                    Available Today
+                  </p>
+                ) : (
+                  <p className="text-red-600 text-sm font-semibold mt-1">
+                    Not Available Today
+                  </p>
+                )}
 
-  <div className="border-t border-gray-200 my-3"></div>
-  <div className="flex-grow"></div>
+                <div className="border-t border-gray-200 my-3"></div>
+                <div className="flex-grow"></div>
 
-  {/* Price + Button */}
-  <div className="flex items-end justify-between">
-    {/* Price + Offer */}
-    <div className="flex flex-col">
-      <p className="text-sm text-gray-500">from</p>
-      <div className="flex items-center gap-2">
-        <span className="text-xl font-bold text-gray-900">₹3,785</span>
-        <span className="bg-sky-500 text-white text-xs font-bold px-2 py-1 rounded-lg">
-          20% OFF
-        </span>
-      </div>
-    </div>
+                {/* Price + Button */}
+                <div className="flex items-end justify-between">
+                  {/* Price + Offer */}
+                  <div className="flex flex-col">
+                    <p className="text-sm text-gray-500">from</p>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl font-bold text-gray-900">
+                        ₹3,785
+                      </span>
+                      <span className="bg-sky-500 text-white text-xs font-bold px-2 py-1 rounded-lg">
+                        20% OFF
+                      </span>
+                    </div>
+                  </div>
 
-    {/* Book Ticket Button */}
-    {deal.availableToday ? (
-      <Link
-        to={`/product-page`}
-        className="px-6 py-2 bg-sky-400 text-white font-semibold rounded-lg hover:bg-sky-300 transition-colors duration-300"
-      >
-        Book Now
-      </Link>
-    ) : (
-      <button
-        disabled
-        className="px-6 py-2 bg-gray-300 text-gray-600 font-semibold rounded-lg cursor-not-allowed"
-      >
-        Not Available
-      </button>
-    )}
-  </div>
-</div>
-
+                  {/* Book Ticket Button */}
+                  <Link
+                    to={`/product-page`}
+                    className="px-6 py-2 bg-sky-400 text-white font-semibold rounded-lg hover:bg-sky-300 transition-colors duration-300"
+                  >
+                    Book Now
+                  </Link>
+                </div>
+              </div>
             </div>
           ))}
         </div>
